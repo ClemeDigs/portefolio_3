@@ -7,33 +7,33 @@
     <script type="module" src="./assets/js/slider.js" defer></script>
     <script type="module" src="./assets/js/dialog.js" defer></script>
     <script src="https://kit.fontawesome.com/59d9a3259e.js" crossorigin="anonymous" defer></script>
-    <link rel="stylesheet" id="theme-stylesheet" href="./assets/css/themeClassic/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
     <title>Portefolio de Clémentine</title>
   </head>
 
-  <body>
+  <body class="theme-classic">
     
-    <header>
-      <div class="logo">
+    <header class="theme-classic">
+      <div class="logo theme-classic">
         <a href="./index.html">
-          <p class="logo">Clémentine Digout</p>
+          <p class="logo theme-classic">Clémentine Digout</p>
         </a>
       </div>
-      <nav class="nav-header">
-        <ul>
-          <li><a href="#mes-projets">Projets</a></li>
-          <li><a href="#a-propos">À propos</a></li>
-          <li class="contact-nav"><a href="#contact">Contact</a></li>
+      <nav class="nav-header theme-classic">
+        <ul class="theme-classic">
+          <li><a href="#mes-projets" class="theme-classic">Projets</a></li>
+          <li><a href="#a-propos" class="theme-classic">À propos</a></li>
+          <li class="contact-nav"><a href="#contact" class="theme-classic">Contact</a></li>
         </ul>
       </nav>
-      <div class="icones">
-        <button class="menu-mobile btn-none"><i class="fa-solid fa-bars" data-dialog="#nav-mobile"></i></button>
-        <button class="theme-switcher btn-none"><i class="fa-solid fa-pencil"></i></button>
+      <div class="icones theme-classic">
+        <button class="menu-mobile btn-none theme-classic"><i class="fa-solid fa-bars" data-dialog="#nav-mobile"></i></button>
+        <button class="theme-switcher btn-none theme-classic"><i class="fa-solid fa-pencil theme-classic"></i></button>
       </div>
       <div class="dialog" id="nav-mobile">
-        <div class="nav-mobile">
-          <nav>
-            <ul>
+        <div class="nav-mobile theme-classic">
+          <nav class="theme-classic">
+            <ul class="theme-classic">
               <li><a href="#mes-projets">Projets</a></li>
               <li><a href="#a-propos">À propos</a></li>
               <li><a href="#contact">Contact</a></li>
@@ -43,28 +43,28 @@
       </div>
     </header>
 
-    <main>
+    <main class="theme-classic">
 
-      <section class="section-hero animate__amimated animate__fadeInDown">
-        <div class="banner__left">
-                <div class="banner__content">
-                    <h1>Design Web et Developpement</h1>
-                    <p>Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie. Chocolate bar bear claw jujubes biscuit halvah sesame snaps gingerbread lollipop. Oat cake candy canes jelly liquorice oat cake brownie. Sweet roll gummies sweet icing sweet roll wafer. Chocolate lemon drops jujubes jelly-o caramels jelly beans soufflé cheesecake pie. Cake sesame snaps jelly beans ice cream fruitcake danish ice cream. Cupcake gummies biscuit croissant caramels gingerbread jelly-o. Liquorice tootsie roll croissant sesame snaps chupa chups pastry marshmallow shortbread gummies.</p>
-                    <button class="btn-primary">En savoir plus</button>
+      <section class="section-hero animate__amimated animate__fadeInDown theme-classic">
+        <div class="banner__left theme-classic">
+                <div class="banner__content theme-classic">
+                    <h1 class="theme-classic">Design Web et Developpement</h1>
+                    <p class="theme-classic">Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie. Chocolate bar bear claw jujubes biscuit halvah sesame snaps gingerbread lollipop. Oat cake candy canes jelly liquorice oat cake brownie. Sweet roll gummies sweet icing sweet roll wafer. Chocolate lemon drops jujubes jelly-o caramels jelly beans soufflé cheesecake pie. Cake sesame snaps jelly beans ice cream fruitcake danish ice cream. Cupcake gummies biscuit croissant caramels gingerbread jelly-o. Liquorice tootsie roll croissant sesame snaps chupa chups pastry marshmallow shortbread gummies.</p>
+                    <button class="btn-primary theme-classic">En savoir plus</button>
                 </div>
             </div>
-            <div class="banner__right">
-              <img class="img__banner" src="./assets/img/femme-classique.png" alt="Illustration de femme">
-              <img class="img__banner-2" src="./assets/img/femme-classique.png" alt="Illustration de femme">
+            <div class="banner__right theme-classic">
+              <img class="img__banner theme-classic" src="./assets/img/femme-classique.png" alt="Illustration de femme">
+              <img class="img__banner-2 theme-classic" src="./assets/img/femme-classique.png" alt="Illustration de femme">
             </div>
       </section>
 
-      <section class="mes-projets" id="mes-projets">
-        <header>
+      <section class="mes-projets theme-classic" id="mes-projets">
+        <header class="theme-classic">
           <h2>Mes projets</h2>
           <i class="fa-solid fa-sliders filter-icon"></i>
         </header>
-        <div class="filters hidden">
+        <div class="filters theme-classic hidden">
             <label for="design">Design UX
               <input type="checkbox" data-filter="UX" class="checkbox-filter" name="UX">
             </label>
@@ -81,12 +81,12 @@
               <input type="checkbox" data-filter="jeux" class="checkbox-filter" name="jeux">
             </label>
           </div>
-        <div class="projets">
-          <button class="slider__btn--previous btn-primary">&#10094;</button>
-          <div class="projets-grid"></div>
-          <button class="slider__btn--next btn-primary">&#10095;</button>
+        <div class="projets theme-classic">
+          <button class="slider__btn--previous btn-primary theme-classic">&#10094;</button>
+          <div class="projets-grid theme-classic"></div>
+          <button class="slider__btn--next btn-primary theme-classic">&#10095;</button>
         </div>
-        <div class="progress">
+        <div class="progress theme-classic">
           <div class="progress__bar"></div>
         </div>
       </section>
@@ -103,14 +103,13 @@
       </div>
     </main>
 
-    <footer>
-      <div class="contact" id="contact">
+    <footer class="theme-classic">
+      <div class="contact theme-classic" id="contact">
         <i class="fa-regular fa-envelope"></i>
         <p>Contact</p>
       </div>
       <i class="fa-brands fa-linkedin-in"></i>
     </footer>
-
 
   </body>
 

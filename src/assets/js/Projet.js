@@ -25,9 +25,9 @@ export default class Projet {
         imgHtml.setAttribute('alt', this.title);
         btnMore.setAttribute('data-dialog', '#dialog-projets');
 
-        cardHtml.classList.add('div-projet');
-        cardInfoHtml.classList.add('div-info');
-        imgHtml.classList.add('img-projet');
+        cardHtml.className = 'div-projet theme-classic';
+        cardInfoHtml.className = 'div-info theme-classic';
+        imgHtml.className = 'img-projet theme-classic';
         /* titleHtml.classList.add('');
         taskHtml.classList.add('');
         dateHtml.classList.add('');*/

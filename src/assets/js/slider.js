@@ -3,6 +3,7 @@ const btnPrevious = document.querySelector('.slider__btn--previous');
 const btnNext = document.querySelector('.slider__btn--next');
 const slides = document.querySelectorAll('.div-projet');
 const slidesContainer = document.querySelector('.projets-grid');
+const body = document.body;
 
 let progressBar = document.querySelector('.progress__bar');
 let currentSlideIndex = 0;
@@ -57,16 +58,20 @@ function changeSlide() {
     }, 3000);
 }
 
-hideBtns();
 
-btnPrevious.addEventListener('click', () => {
-    previousSlide();
+if (body.classList.contains('theme-dark')) {
+
     hideBtns();
-});
 
-btnNext.addEventListener('click', () => {
-    nextSlide();
-    hideBtns();
-});
+    btnPrevious.addEventListener('click', () => {
+        previousSlide();
+        hideBtns();
+    });
 
-changeSlide();
+    btnNext.addEventListener('click', () => {
+        nextSlide();
+        hideBtns();
+    });
+
+    changeSlide();
+}

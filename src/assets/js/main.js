@@ -1,12 +1,10 @@
-
 import "animate.css";
 import WOW from "wow.js";
-import "./change_theme";
 import Projet from "./Projet";
 import projets from "./projets";
 import "./handle_scroll";
 import "./filters";
-import "../css/themeClassic/main.css";
+import "./change_theme";
 
 
 

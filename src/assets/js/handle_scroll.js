@@ -1,11 +1,11 @@
-const themeStylesheet = document.getElementById('theme-stylesheet');
 const btnSwitchTheme = document.querySelector('.theme-switcher');
 
 function handleScroll() {
     const header = document.querySelector('body header');
     // const btnFlecheUp = document.getElementById('btn-up');
+    const body = document.body;
 
-    if (themeStylesheet.getAttribute('href') === '/assets/css/themeColor/main.css') {
+    if (body.classList.contains('theme-color')) {
         if (document.documentElement.scrollTop > 100) {
             header.classList.add('minimized');
             // btnFlecheUp.classList.remove('hidden');
@@ -23,5 +23,5 @@ window.onscroll = () => {
 };
 
 btnSwitchTheme.addEventListener('click', () => {
-    handleScroll(); 
+    handleScroll();
 });

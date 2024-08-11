@@ -3,67 +3,65 @@ import imgFemmeColor2 from '../img/femme-color-02.png';
 import imgFemmeDark from '../img/femme-dark-01.png';
 import imgFemmeDark2 from '../img/femme-dark-02.png';
 import imgFemmeClassic from '../img/femme-classique.png';
+import Projet from "./Projet";
 
 const btnSwitchTheme = document.querySelector('.theme-switcher');
 const imgBanner = document.querySelector('.img__banner');
 const imgBanner2 = document.querySelector('.img__banner-2');
+const elementsToTheme = document.querySelectorAll('body, body *');
 const header = document.querySelector('header');
-const sectionHero = document.querySelector('.section-hero');
-const sectionProjets = document.querySelector('.mes-projets');
-let themeStylesheet = document.getElementById('theme-stylesheet');
-
-// Fonction pour charger dynamiquement une feuille de style
-function loadStyleSheet(href) {
-    if (themeStylesheet) {
-        themeStylesheet.remove();
-    }
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = href;
-    link.id = 'theme-stylesheet';
-    document.head.appendChild(link);
-    themeStylesheet = link;
-    return link;
-}
+const mesProjets = document.querySelector('.mes-projets');
 
 btnSwitchTheme.addEventListener('click', () => {
     imgBanner.style.opacity = 0;
+
     setTimeout(() => {
-        let currentTheme = themeStylesheet.getAttribute('href');
-        if (currentTheme.includes('themeColor')) {
-            loadStyleSheet('/assets/css/themeDark/main.css');
+        // Déterminer quel thème appliquer et changer les classes
+        if (document.body.classList.contains('theme-color')) {
+            changeTheme('theme-color', 'theme-dark');
             imgBanner.setAttribute('src', imgFemmeDark);
             imgBanner2.setAttribute('src', imgFemmeDark2);
-        } else if (currentTheme.includes('themeDark')) {
-            loadStyleSheet('/assets/css/themeClassic/main.css');
+            applyAnimations('fadeOutUp', 'slideOutRight');
+        } else if (document.body.classList.contains('theme-dark')) {
+            changeTheme('theme-dark', 'theme-classic');
             imgBanner.setAttribute('src', imgFemmeClassic);
             imgBanner2.setAttribute('src', imgFemmeClassic);
+            removeAnimations();
         } else {
-            loadStyleSheet('/assets/css/themeColor/main.css');
+            changeTheme('theme-classic', 'theme-color');
             imgBanner.setAttribute('src', imgFemmeColor);
             imgBanner2.setAttribute('src', imgFemmeColor2);
+            applyAnimations('fadeOutUp', 'slideOutRight');
         }
         imgBanner.style.opacity = 1;
-        sectionHero.classList.add('animate__animated', 'animate__fadeInUp');
     }, 1000);
 });
 
-btnSwitchTheme.addEventListener('click', () => {
-    let currentTheme = themeStylesheet.getAttribute('href');
-    if (currentTheme.includes('themeColor')) {
-        header.classList.add('animate__animated', 'animate__fadeOutUp');
-        sectionProjets.classList.add('animate__animated', 'animate__slideOutRight');
-    } 
-});
+function changeTheme(oldTheme, newTheme) {
+    elementsToTheme.forEach(element => {
+        element.classList.remove(oldTheme);
+        element.classList.add(newTheme);
+    });
+}
+
+function applyAnimations(headerAnimation, projetsAnimation) {
+    header.classList.add('animate__animated', `animate__${headerAnimation}`);
+    mesProjets.classList.add('animate__animated', `animate__${projetsAnimation}`);
+}
+
+function removeAnimations() {
+    header.classList.remove('animate__fadeOutUp', 'animate__slideInDown');
+    mesProjets.classList.remove('animate__slideOutRight', 'animate__slideInRight');
+}
 
 header.addEventListener('animationend', () => {
     header.classList.remove('animate__fadeOutUp');
     header.classList.add('animate__slideInDown');
 });
 
-sectionProjets.addEventListener('animationend', () => {
-    sectionProjets.classList.remove('animate__slideOutRight');
-    sectionProjets.classList.add('animate__slideInRight');
+mesProjets.addEventListener('animationend', () => {
+    mesProjets.classList.remove('animate__slideOutRight');
+    mesProjets.classList.add('animate__slideInRight');
 });
 
 imgBanner2.addEventListener('mouseover', () => {
