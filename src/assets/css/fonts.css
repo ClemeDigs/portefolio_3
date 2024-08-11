@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'playwrite';
+    src: url('../fonts/playwritemx-variablefont_wght-webfont.woff2') format('woff2'),
+        url('../fonts/playwritemx-variablefont_wght-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
+        url('../fonts/montserrat-variablefont_wght-webfont.woff') format('woff');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('../fonts/montserrat-italic-variablefont_wght-webfont.woff2') format('woff2'),
+        url('../fonts/montserrat-italic-variablefont_wght-webfont.woff') format('woff');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'michroma';
+    src: url('../fonts/michroma-regular-webfont.woff2') format('woff2'),
+        url('../fonts/michroma-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'ubuntu';
+    src: url('../fonts/ubuntu-bold-webfont.woff2') format('woff2'),
+        url('../fonts/ubuntu-bold-webfont.woff') format('woff');
+}

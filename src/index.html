@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="./assets/js/main.js" defer></script>
+    <script type="module" src="./assets/js/slider.js" defer></script>
+    <script type="module" src="./assets/js/dialog.js" defer></script>
+    <script src="https://kit.fontawesome.com/59d9a3259e.js" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" id="theme-stylesheet" href="./assets/css/themeClassic/main.css">
+    <title>Portefolio de Clémentine</title>
+  </head>
+
+  <body>
+    
+    <header>
+      <div class="logo">
+        <a href="./index.html">
+          <p class="logo">Clémentine Digout</p>
+        </a>
+      </div>
+      <nav class="nav-header">
+        <ul>
+          <li><a href="#mes-projets">Projets</a></li>
+          <li><a href="#a-propos">À propos</a></li>
+          <li class="contact-nav"><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="icones">
+        <button class="menu-mobile btn-none"><i class="fa-solid fa-bars" data-dialog="#nav-mobile"></i></button>
+        <button class="theme-switcher btn-none"><i class="fa-solid fa-pencil"></i></button>
+      </div>
+      <div class="dialog" id="nav-mobile">
+        <div class="nav-mobile">
+          <nav>
+            <ul>
+              <li><a href="#mes-projets">Projets</a></li>
+              <li><a href="#a-propos">À propos</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <section class="section-hero animate__amimated animate__fadeInDown">
+        <div class="banner__left">
+                <div class="banner__content">
+                    <h1>Design Web et Developpement</h1>
+                    <p>Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie. Chocolate bar bear claw jujubes biscuit halvah sesame snaps gingerbread lollipop. Oat cake candy canes jelly liquorice oat cake brownie. Sweet roll gummies sweet icing sweet roll wafer. Chocolate lemon drops jujubes jelly-o caramels jelly beans soufflé cheesecake pie. Cake sesame snaps jelly beans ice cream fruitcake danish ice cream. Cupcake gummies biscuit croissant caramels gingerbread jelly-o. Liquorice tootsie roll croissant sesame snaps chupa chups pastry marshmallow shortbread gummies.</p>
+                    <button class="btn-primary">En savoir plus</button>
+                </div>
+            </div>
+            <div class="banner__right">
+              <img class="img__banner" src="./assets/img/femme-classique.png" alt="Illustration de femme">
+              <img class="img__banner-2" src="./assets/img/femme-classique.png" alt="Illustration de femme">
+            </div>
+      </section>
+
+      <section class="mes-projets" id="mes-projets">
+        <header>
+          <h2>Mes projets</h2>
+          <i class="fa-solid fa-sliders filter-icon"></i>
+        </header>
+        <div class="filters hidden">
+            <label for="design">Design UX
+              <input type="checkbox" data-filter="UX" class="checkbox-filter" name="UX">
+            </label>
+            <label for="design">Design UI
+              <input type="checkbox" data-filter="UI" class="checkbox-filter" name="UI">
+            </label>
+            <label for="design">Animation
+              <input type="checkbox" data-filter="animation" class="checkbox-filter" name="animation">
+            </label>
+            <label for="programmation">Programmation
+              <input type="checkbox" data-filter="programmation" class="checkbox-filter" name="programmation">
+            </label>
+            <label for="design">Jeux
+              <input type="checkbox" data-filter="jeux" class="checkbox-filter" name="jeux">
+            </label>
+          </div>
+        <div class="projets">
+          <button class="slider__btn--previous btn-primary">&#10094;</button>
+          <div class="projets-grid"></div>
+          <button class="slider__btn--next btn-primary">&#10095;</button>
+        </div>
+        <div class="progress">
+          <div class="progress__bar"></div>
+        </div>
+      </section>
+
+      <section id="a-propos"></section>
+
+      <div id="dialog-projets" class="dialog">
+        <div>        
+          <button class="btn-close">X</button>
+          <button class="btn-previous">previous</button>
+          <button class="btn-next">next</button>
+        </div>
+        <div class="dialog-content"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="contact" id="contact">
+        <i class="fa-regular fa-envelope"></i>
+        <p>Contact</p>
+      </div>
+      <i class="fa-brands fa-linkedin-in"></i>
+    </footer>
+
+
+  </body>
+
+
+</html>
+

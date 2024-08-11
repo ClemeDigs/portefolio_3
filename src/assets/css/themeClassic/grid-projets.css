@@ -1,0 +1,72 @@
+.mes-projets > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mes-projets h2 {
+    font-family: 'ubuntu';
+}
+
+.mes-projets i {
+    color: var(--text-dark);
+}
+
+.projets-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.div-projet {
+    position: relative;
+}
+
+.img-projet {
+    width: 100%;
+    height: 100%;
+}
+
+.slider__btn--previous, .slider__btn--next {
+    display: none;
+}
+
+.div-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 1s;
+    color: var(--light);
+}
+
+.div-info:hover {
+    opacity: 1;
+}
+
+
+@media screen and (min-width:650px) {
+
+    .projets-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .projets-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (min-width:1024px) {
+
+    .projets-grid {
+        grid-template-columns: repeat(4,1fr);
+    }
+}

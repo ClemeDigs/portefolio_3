@@ -1,0 +1,14 @@
+.btn-primary {
+    background-color: var(--dark-blue);
+    border: 1px solid var(--text-light);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    
+}
+
+.btn-none {
+    background-color: var(--none);
+    border: 1px solid var(--none);
+    color: var(--text-light);
+    border-radius: 50px;
+}

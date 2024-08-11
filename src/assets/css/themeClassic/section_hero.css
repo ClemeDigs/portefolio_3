@@ -1,0 +1,81 @@
+.section-hero {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    background-color: var(--light);
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+}
+
+h1 {
+    font-family: 'ubuntu';
+}
+
+.banner__left {
+    padding: 2rem;
+    order: 2;
+    display: flex;
+    justify-content: center;
+}
+
+.banner__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 650px;
+}
+
+.banner__right {
+    order: 1;
+    display: flex;
+    position: relative;
+}
+
+.img__banner {
+    display: flex;
+    justify-content: flex-end;
+    max-width: min(400px, 100%);
+    width: 100%;
+    height: auto;
+}
+
+.img__banner-2 {
+    display: flex;
+    justify-content: flex-end;
+    max-width: min(400px, 100%);
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .section-hero {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .banner__left{
+        order: 1;
+        align-items: center;
+        width: 50%;
+    }
+
+    .banner__right{
+        order: 2;
+            align-items: center;
+            justify-content: flex-end;
+            width: 50%;
+    }
+
+    .img__banner {
+        min-width: 300px;
+        transition: all 2s;
+    }
+}
