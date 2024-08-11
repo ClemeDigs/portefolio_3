@@ -8,7 +8,6 @@ import "./handle_scroll";
 import "./filters";
 
 
-
 new WOW().init();
 
 const dialog = document.getElementById('dialog-projets');

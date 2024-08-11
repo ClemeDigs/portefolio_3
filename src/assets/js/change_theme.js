@@ -3,6 +3,9 @@ import imgFemmeColor2 from '../img/femme-color-02.png';
 import imgFemmeDark from '../img/femme-dark-01.png';
 import imgFemmeDark2 from '../img/femme-dark-02.png';
 import imgFemmeClassic from '../img/femme-classique.png';
+import themeClassic from "../css/themeClassic/main.css";
+import themeColor from "../css/themeColor/main.css";
+import themeDark from "../css/themeDark/main.css";
 
 const btnSwitchTheme = document.querySelector('.theme-switcher');
 const imgBanner = document.querySelector('.img__banner');
@@ -17,15 +20,15 @@ btnSwitchTheme.addEventListener('click', () => {
     imgBanner.style.opacity = 0;
     setTimeout( () => {
         if (themeStylesheet.getAttribute('href') === '/assets/css/themeColor/main.css') {
-            themeStylesheet.setAttribute('href', '/assets/css/themeDark/main.css');
+            themeStylesheet.setAttribute('href', themeDark);
             imgBanner.setAttribute('src', imgFemmeDark);
             imgBanner2.setAttribute('src', imgFemmeDark2);
         } else if (themeStylesheet.getAttribute('href') === '/assets/css/themeDark/main.css') {
-            themeStylesheet.setAttribute('href', '/assets/css/themeClassic/main.css');
+            themeStylesheet.setAttribute('href', themeClassic);
             imgBanner.setAttribute('src', imgFemmeClassic);
             imgBanner2.setAttribute('src', imgFemmeClassic);
         } else {
-            themeStylesheet.setAttribute('href', '/assets/css/themeColor/main.css');
+            themeStylesheet.setAttribute('href', themeColor);
             imgBanner.setAttribute('src', imgFemmeColor);
             imgBanner2.setAttribute('src', imgFemmeColor2);
         } 
