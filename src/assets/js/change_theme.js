@@ -3,42 +3,54 @@ import imgFemmeColor2 from '../img/femme-color-02.png';
 import imgFemmeDark from '../img/femme-dark-01.png';
 import imgFemmeDark2 from '../img/femme-dark-02.png';
 import imgFemmeClassic from '../img/femme-classique.png';
-import themeClassic from "../css/themeClassic/main.css";
-import themeColor from "../css/themeColor/main.css";
-import themeDark from "../css/themeDark/main.css";
 
 const btnSwitchTheme = document.querySelector('.theme-switcher');
 const imgBanner = document.querySelector('.img__banner');
 const imgBanner2 = document.querySelector('.img__banner-2');
-const themeStylesheet = document.getElementById('theme-stylesheet');
 const header = document.querySelector('header');
 const sectionHero = document.querySelector('.section-hero');
 const sectionProjets = document.querySelector('.mes-projets');
+let themeStylesheet = document.getElementById('theme-stylesheet');
 
+// Fonction pour charger dynamiquement une feuille de style
+function loadStyleSheet(href) {
+    if (themeStylesheet) {
+        themeStylesheet.remove();
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.id = 'theme-stylesheet';
+    document.head.appendChild(link);
+    themeStylesheet = link;
+    return link;
+}
 
 btnSwitchTheme.addEventListener('click', () => {
     imgBanner.style.opacity = 0;
-    setTimeout( () => {
-        if (themeStylesheet.getAttribute('href') === '/assets/css/themeColor/main.css') {
-            themeStylesheet.setAttribute('href', themeDark);
+    setTimeout(() => {
+        let currentTheme = themeStylesheet.getAttribute('href');
+        if (currentTheme.includes('themeColor')) {
+            loadStyleSheet('/assets/css/themeDark/main.css');
             imgBanner.setAttribute('src', imgFemmeDark);
             imgBanner2.setAttribute('src', imgFemmeDark2);
-        } else if (themeStylesheet.getAttribute('href') === '/assets/css/themeDark/main.css') {
-            themeStylesheet.setAttribute('href', themeClassic);
+        } else if (currentTheme.includes('themeDark')) {
+            loadStyleSheet('/assets/css/themeClassic/main.css');
             imgBanner.setAttribute('src', imgFemmeClassic);
             imgBanner2.setAttribute('src', imgFemmeClassic);
         } else {
-            themeStylesheet.setAttribute('href', themeColor);
+            loadStyleSheet('/assets/css/themeColor/main.css');
             imgBanner.setAttribute('src', imgFemmeColor);
             imgBanner2.setAttribute('src', imgFemmeColor2);
-        } 
+        }
         imgBanner.style.opacity = 1;
-        sectionHero.classList.add('animate__animated', 'animate__fadeInUp')
+        sectionHero.classList.add('animate__animated', 'animate__fadeInUp');
     }, 1000);
 });
 
 btnSwitchTheme.addEventListener('click', () => {
-    if (themeStylesheet.getAttribute('href') === '/assets/css/themeColor/main.css') {
+    let currentTheme = themeStylesheet.getAttribute('href');
+    if (currentTheme.includes('themeColor')) {
         header.classList.add('animate__animated', 'animate__fadeOutUp');
         sectionProjets.classList.add('animate__animated', 'animate__slideOutRight');
     } 
@@ -53,7 +65,6 @@ sectionProjets.addEventListener('animationend', () => {
     sectionProjets.classList.remove('animate__slideOutRight');
     sectionProjets.classList.add('animate__slideInRight');
 });
-
 
 imgBanner2.addEventListener('mouseover', () => {
     imgBanner.style.opacity = 0;

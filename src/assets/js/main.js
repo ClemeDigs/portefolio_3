@@ -6,6 +6,8 @@ import Projet from "./Projet";
 import projets from "./projets";
 import "./handle_scroll";
 import "./filters";
+import "../css/themeClassic/main.css";
+
 
 
 new WOW().init();
