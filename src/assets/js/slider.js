@@ -58,20 +58,16 @@ function changeSlide() {
     }, 3000);
 }
 
+hideBtns();
 
-if (body.classList.contains('theme-dark')) {
-
+btnPrevious.addEventListener('click', () => {
+    previousSlide();
     hideBtns();
+});
 
-    btnPrevious.addEventListener('click', () => {
-        previousSlide();
-        hideBtns();
-    });
+btnNext.addEventListener('click', () => {
+    nextSlide();
+    hideBtns();
+});
 
-    btnNext.addEventListener('click', () => {
-        nextSlide();
-        hideBtns();
-    });
-
-    changeSlide();
-}
+changeSlide();

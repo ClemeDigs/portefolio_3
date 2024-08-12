@@ -3,7 +3,6 @@ import imgFemmeColor2 from '../img/femme-color-02.png';
 import imgFemmeDark from '../img/femme-dark-01.png';
 import imgFemmeDark2 from '../img/femme-dark-02.png';
 import imgFemmeClassic from '../img/femme-classique.png';
-import Projet from "./Projet";
 
 const btnSwitchTheme = document.querySelector('.theme-switcher');
 const imgBanner = document.querySelector('.img__banner');
