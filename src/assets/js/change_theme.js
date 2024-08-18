@@ -10,58 +10,43 @@ const imgBanner2 = document.querySelector('.img__banner-2');
 const elementsToTheme = document.querySelectorAll('body, body *');
 const header = document.querySelector('header');
 const mesProjets = document.querySelector('.mes-projets');
+// Sélectionner tous les boutons radio de thème
+const themeRadios = document.querySelectorAll('input[name="btn-switch-theme"]');
 
-btnSwitchTheme.addEventListener('click', () => {
-    imgBanner.style.opacity = 0;
-
-    setTimeout(() => {
-        // Déterminer quel thème appliquer et changer les classes
-        if (document.body.classList.contains('theme-color')) {
-            changeTheme('theme-color', 'theme-dark');
-            imgBanner.setAttribute('src', imgFemmeDark);
-            imgBanner2.setAttribute('src', imgFemmeDark2);
-            applyAnimations('fadeOutUp', 'slideOutRight');
-        } else if (document.body.classList.contains('theme-dark')) {
-            changeTheme('theme-dark', 'theme-classic');
-            imgBanner.setAttribute('src', imgFemmeClassic);
-            imgBanner2.setAttribute('src', imgFemmeClassic);
-            removeAnimations();
-        } else {
-            changeTheme('theme-classic', 'theme-color');
-            imgBanner.setAttribute('src', imgFemmeColor);
-            imgBanner2.setAttribute('src', imgFemmeColor2);
-            applyAnimations('fadeOutUp', 'slideOutRight');
-        }
-        imgBanner.style.opacity = 1;
-    }, 1000);
-});
-
-function changeTheme(oldTheme, newTheme) {
+// Fonction pour changer de thème en fonction de la valeur sélectionnée
+function changeTheme(oldThemes, newTheme) {
     elementsToTheme.forEach(element => {
-        element.classList.remove(oldTheme);
+        // Supprimer chaque ancienne classe individuellement
+        oldThemes.split(' ').forEach(oldTheme => {
+            element.classList.remove(oldTheme);
+        });
+        // Ajouter la nouvelle classe
         element.classList.add(newTheme);
     });
 }
 
-function applyAnimations(headerAnimation, projetsAnimation) {
-    header.classList.add('animate__animated', `animate__${headerAnimation}`);
-    mesProjets.classList.add('animate__animated', `animate__${projetsAnimation}`);
-}
+// Écouter le changement de chaque radio et appliquer le thème sélectionné
+themeRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        // Déterminer quel thème appliquer en fonction de la valeur du bouton radio sélectionné
+        const selectedTheme = radio.value;
 
-function removeAnimations() {
-    header.classList.remove('animate__fadeOutUp', 'animate__slideInDown');
-    mesProjets.classList.remove('animate__slideOutRight', 'animate__slideInRight');
-}
-
-header.addEventListener('animationend', () => {
-    header.classList.remove('animate__fadeOutUp');
-    header.classList.add('animate__slideInDown');
+        if (selectedTheme === 'color') {
+            changeTheme('theme-dark theme-classic', 'theme-color');
+            imgBanner.setAttribute('src', imgFemmeColor);
+            imgBanner2.setAttribute('src', imgFemmeColor2);
+        } else if (selectedTheme === 'dark') {
+            changeTheme('theme-color theme-classic', 'theme-dark');
+            imgBanner.setAttribute('src', imgFemmeDark);
+            imgBanner2.setAttribute('src', imgFemmeDark2);
+        } else {
+            changeTheme('theme-color theme-dark', 'theme-classic');
+            imgBanner.setAttribute('src', imgFemmeClassic);
+            imgBanner2.setAttribute('src', imgFemmeClassic);
+        }
+    });
 });
 
-mesProjets.addEventListener('animationend', () => {
-    mesProjets.classList.remove('animate__slideOutRight');
-    mesProjets.classList.add('animate__slideInRight');
-});
 
 imgBanner2.addEventListener('mouseover', () => {
     imgBanner.style.opacity = 0;

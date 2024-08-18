@@ -27,8 +27,17 @@
         </ul>
       </nav>
       <div class="icones theme-classic">
-        <button class="menu-mobile btn-none theme-classic"><i class="fa-solid fa-bars" data-dialog="#nav-mobile"></i></button>
-        <button class="theme-switcher btn-none theme-classic"><i class="fa-solid fa-pencil theme-classic"></i></button>
+        <button class="menu-mobile btn-none"><i class="fa-solid fa-bars" data-dialog="#nav-mobile"></i></button>
+        <label for="btn-switch-theme" class="color-toggle-wrapper theme-switcher theme-classic">
+          <input id="btn-switch-theme-classic" checked name="btn-switch-theme" value="classic" class="color-toggle-classic" type="radio">
+          <input id="btn-switch-theme-color" name="btn-switch-theme" value="color" class="color-toggle-color" type="radio">
+          <input id="btn-switch-theme-dark" name="btn-switch-theme" value="dark" class="color-toggle-dark" type="radio">
+          <div class="sun-moon"></div>
+          <div class="dot1"></div>
+          <div class="dot2"></div>
+          <div class="dot3"></div>
+          <div class="dots-moon"></div>
+        </label>
       </div>
       <div class="dialog" id="nav-mobile">
         <div class="nav-mobile theme-classic">

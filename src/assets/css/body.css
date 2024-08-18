@@ -1,19 +1,14 @@
-body.theme-classic {
+body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
     margin: 0;
-    background-color: var(--light);
     font-family: 'montserrat';
     font-weight: 600;
-    color: var(--text-dark);
     overflow-x: hidden;
     transition: all 2s;
 }
 
-main.theme-classic {
-    margin-top: 10rem;
+main {
     max-width: 1440px;
     display: flex;
     flex-direction: column;
@@ -21,18 +16,24 @@ main.theme-classic {
     padding: 2rem;
 }
 
-body.theme-color {
-    display: flex;
-    flex-direction: column;
+
+body.theme-classic {
     align-items: center;
     gap: 2rem;
-    margin: 0;
-    background-color: var(--text-light);
-    font-family: 'montserrat';
-    font-weight: 600;
+    background-color: var(--light);
     color: var(--text-dark);
-    overflow-x: hidden;
-    transition: all 2s;
+}
+
+main.theme-classic {
+    margin-top: 10rem;
+}
+
+
+body.theme-color {
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--text-light);
+    color: var(--text-dark);
     background-image: url(../../img/motifs-couleurs-02.png);
     background-size: 100%;
     background-attachment: fixed;
@@ -40,34 +41,18 @@ body.theme-color {
 
 main.theme-color {
     margin-top: 12rem;
-    max-width: 1440px;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    padding: 2rem;
 }
 
 
 body.theme-dark {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
     background-color: var(--dark);
     background-image: url(../../img/fond-dark.png);
     background-size: 100%;
-    font-family: 'montserrat';
-    font-weight: 600;
     color: var(--text-light);
-    overflow-x: hidden;
-    transition: all 2s;
 }
 
 main.theme-dark {
     margin-top: 5rem;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    gap: 3rem;
 }
 
 @media screen and (min-width: 768px) {
@@ -79,7 +64,7 @@ main.theme-dark {
 
     main.theme-dark {
         margin-top: 0;
-        grid-column: 3 / 12;
+        grid-column: 4 / 12;
         min-height: 100vh;
         padding: 3rem 0;
     }

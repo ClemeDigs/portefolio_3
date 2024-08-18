@@ -1,48 +1,211 @@
+
+.btn-primary,
+.btn-none {
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-family: 'montserrat';
+}
+
+
 .btn-primary.theme-classic {
     background-color: var(--blue-dark);
     border: 1px solid var(--light);
     color: var(--light);
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    font-family: 'montserrat';
     font-weight: 900;
-}
-
-.btn-none.theme-classic {
-    background-color: var(--none);
-    border: 1px solid var(--none);
-    color: var(--text-dark);
-    border-radius: 50px;
 }
 
 .btn-primary.theme-color {
     background-color: var(--orange-dark);
     border: 1px solid var(--text-light);
     color: var(--text-light);
-    border-radius: 50px;
-    padding: 0.5rem 1rem;
-    font-family: 'montserrat';
     font-weight: 900;
-}
-
-.btn-none.theme-color {
-    background-color: var(--none);
-    border: 1px solid var(--none);
-    color: var(--text-dark);
-    border-radius: 50px;
 }
 
 .btn-primary.theme-dark {
     background-color: var(--dark-blue);
     border: 1px solid var(--text-light);
+    color: var(--text-light);
+    font-weight: 900;
+}
+
+
+.btn-none {
+    background-color: var(--none);
+    border: 1px solid var(--none);
+}
+
+.btn-none.theme-classic {
     color: var(--text-dark);
-    padding: 0.5rem 1rem;
-    
+}
+
+.btn-none.theme-color {
+    color: var(--text-dark);
 }
 
 .btn-none.theme-dark {
-    background-color: var(--none);
-    border: 1px solid var(--none);
     color: var(--text-light);
-    border-radius: 50px;
+}
+
+
+
+
+.color-toggle-wrapper {
+    position: relative;
+}
+
+.color-toggle-classic, .color-toggle-color, .color-toggle-dark {
+    position: absolute;
+    opacity: 0;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.color-toggle-color {
+    left: 25px;
+}
+
+.color-toggle-dark {
+    left: 50px;
+}
+
+.color-toggle-wrapper::after {
+    content: "";
+    width: 90px;
+    height: 30px;
+    border: 2px solid rgb(211, 211, 211);
+    border-radius: 100px;
+    display: inline-flex;
+    padding: 0;
+    margin: 0;
+    transition: 0.3s all ease;
+    cursor: pointer;
+}
+
+.color-toggle-wrapper:has(.color-toggle-classic:checked)::after {
+    background: linear-gradient(to right, rgb(35, 185, 255) 0%, rgb(169, 228, 255) 100%);
+}
+
+.color-toggle-wrapper:has(.color-toggle-color:checked)::after {
+    background: linear-gradient(to right, rgb(250, 136, 145) 0%, rgb(255, 220, 182) 100%);
+}
+
+.color-toggle-wrapper:has(.color-toggle-dark:checked)::after {
+    background: linear-gradient(to right, rgb(37, 5, 87) 0%, rgb(9, 1, 22) 100%);
+}
+
+.sun-moon {
+    position: absolute;
+    margin: 5px 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    z-index: 3;
+    transition: 0.4s all ease;
+}
+
+.color-toggle-classic:checked ~ .sun-moon {
+    left: 2.5px;
+    background-color: rgb(254, 246, 96);
+    border: 2px solid rgba(254, 247, 113, 0.66);
+    box-shadow: 0 0 10px rgb(255, 248, 147), 0 0 15px rgba(255, 249, 167, 0.575);
+}
+
+.color-toggle-color:checked ~ .sun-moon {
+    left: 32.5px;
+    background-color: rgb(255, 115, 0);
+    border: 2px solid rgb(255, 153, 0);
+    box-shadow: 0 0 10px rgb(255, 153, 0), 0 0 15px rgba(255, 205, 176, 0.575);
+}
+
+.color-toggle-dark:checked ~ .sun-moon {
+    left: 62.5px;
+    background-color: rgb(255, 251, 227);
+    border: 2px solid rgba(255, 251, 227, 0.5);
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 15px rgba(255, 255, 255, 0.575);
+}
+
+.dot1, .dot2, .dot3 {
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    transition: 0.4s all ease;
+}
+
+.color-toggle-classic:checked ~ .dot1 {
+    width: 18px;
+    height: 18px;
+    right: 50px;
+    bottom: 14px;
+    z-index: 4;
+}
+
+.color-toggle-classic:checked ~ .dot2 {
+    width: 15px;
+    height: 15px;
+    right: 60px;
+    bottom: 16px;
+    z-index: 4;
+}
+
+.color-toggle-classic:checked ~ .dot3 {
+    width: 10px;
+    height: 10px;
+    right: 45px;
+    bottom: 14px;
+    z-index: 4;
+}
+
+.color-toggle-color:checked ~ .dot1 {
+    width: 18px;
+    height: 18px;
+    right: 50px;
+    bottom: 6px;
+    z-index: 4;
+    background-color: rgb(249, 222, 203);
+}
+
+.color-toggle-color:checked ~ .dot2 {
+    width: 15px;
+    height: 15px;
+    right: 60px;
+    bottom: 8px;
+    z-index: 4;
+    background-color: rgb(249, 222, 203);
+}
+
+.color-toggle-color:checked ~ .dot3 {
+    width: 10px;
+    height: 10px;
+    right: 45px;
+    bottom: 6px;
+    z-index: 4;
+    background-color: rgb(249, 222, 203);
+}
+
+.color-toggle-dark:checked ~ .dot1 {
+    width: 6px;
+    height: 6px;
+    right: 40px;
+    bottom: 10px;
+    z-index: 4;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 15px rgba(255, 255, 255, 0.575);
+}
+
+.color-toggle-dark:checked ~ .dot2 {
+    width: 5px;
+    height: 5px;
+    right: 50px;
+    bottom: 20px;
+    z-index: 4;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 15px rgba(255, 255, 255, 0.575);
+}
+
+.color-toggle-dark:checked ~ .dot3 {
+    width: 8px;
+    height: 8px;
+    right: 70px;
+    bottom: 15px;
+    z-index: 4;
+    box-shadow: 0 0 10px rgb(255, 255, 255), 0 0 15px rgba(255, 255, 255, 0.575);
 }

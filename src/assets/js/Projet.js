@@ -29,21 +29,27 @@ export default class Projet {
         cardInfoHtml.className = 'div-info theme-classic';
         imgHtml.className = 'img-projet theme-classic';
 
-        document.querySelector('.theme-switcher').addEventListener('click', () => {
-            if (document.body.classList.contains('theme-classic')){
-                cardHtml.className = 'div-projet theme-color';
-                cardInfoHtml.className = 'div-info theme-color';
-                imgHtml.className = 'img-projet theme-color';
-            } else if (document.body.classList.contains('theme-color')){
-                cardHtml.className = 'div-projet theme-dark';
-                cardInfoHtml.className = 'div-info theme-dark';
-                imgHtml.className = 'img-projet theme-dark';
-            } else {
-                cardHtml.className = 'div-projet theme-classic';
-                cardInfoHtml.className = 'div-info theme-classic';
-                imgHtml.className = 'img-projet theme-classic';
-            }
-        })
+        const themeRadios = document.querySelectorAll('input[name="btn-switch-theme"]');
+
+        themeRadios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                const selectedTheme = radio.value;
+
+                if (selectedTheme === 'classic') {
+                    cardHtml.className = 'div-projet theme-classic';
+                    cardInfoHtml.className = 'div-info theme-classic';
+                    imgHtml.className = 'img-projet theme-classic';
+                } else if (selectedTheme === 'color') {
+                    cardHtml.className = 'div-projet theme-color';
+                    cardInfoHtml.className = 'div-info theme-color';
+                    imgHtml.className = 'img-projet theme-color';
+                } else if (selectedTheme === 'dark') {
+                    cardHtml.className = 'div-projet theme-dark';
+                    cardInfoHtml.className = 'div-info theme-dark';
+                    imgHtml.className = 'img-projet theme-dark';
+                }
+            });
+        });
         
         /* titleHtml.classList.add('');
         taskHtml.classList.add('');

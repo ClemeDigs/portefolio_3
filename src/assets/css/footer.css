@@ -1,57 +1,58 @@
-footer.theme-classic {
-    background-color: var(--blue-dark);
+
+footer {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+}
+
+footer.theme-classic {
+    background-color: var(--blue-dark);
     color: var(--light);
     font-family: 'ubuntu';
 }
 
-.contact.theme-classic {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
 footer.theme-color {
     background-color: var(--bg-color);
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     color: var(--text-light);
     font-family: 'playwrite';
-}
-
-.contact.theme-color {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
 }
 
 footer.theme-dark {
     background-color: var(--dark-blue);
     padding: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
     gap: 2rem;
     font-family: 'michroma';
 }
 
-.contact.theme-dark {
+.contact {
     display: flex;
     align-items: center;
+}
+
+
+.contact.theme-classic {
+    gap: 1rem;
+}
+
+.contact.theme-color {
+    gap: 1rem;
+}
+
+.contact.theme-dark {
     gap: 0.5rem;
 }
 
+
 @media screen and (min-width: 768px) {
     footer.theme-dark {
+        padding: 3rem;
+        grid-column: 1/2;
         position: fixed;
         left: 0;
         bottom: 0;
         z-index: 10;
         flex-direction: column;
+        max-width: fit-content;
     }
 }
