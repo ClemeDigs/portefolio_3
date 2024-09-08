@@ -1,9 +1,15 @@
-
 .btn-primary,
+.btn-secondary,
 .btn-none {
     border-radius: 50px;
     padding: 0.5rem 1rem;
     font-family: 'montserrat';
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+    font-weight: 900;
 }
 
 
@@ -11,21 +17,54 @@
     background-color: var(--blue-dark);
     border: 1px solid var(--light);
     color: var(--light);
-    font-weight: 900;
 }
 
 .btn-primary.theme-color {
     background-color: var(--orange-dark);
     border: 1px solid var(--text-light);
     color: var(--text-light);
-    font-weight: 900;
 }
 
 .btn-primary.theme-dark {
     background-color: var(--dark-blue);
     border: 1px solid var(--text-light);
     color: var(--text-light);
-    font-weight: 900;
+}
+
+
+.btn-secondary.theme-classic {
+    background-color: var(--none);
+    border: 1px solid var(--light);
+    color: var(--light);
+}
+
+.btn-secondary.theme-classic i {
+    color: var(--light);
+}
+
+
+.btn-secondary.theme-classic i::before {
+    color: var(--light);
+}
+
+.btn-secondary.theme-color {
+    background-color: var(--none);
+    border: 1px solid var(--orange-dark);
+    color: var(--orange-dark);
+}
+
+.btn-secondary.theme-color i::before {
+    color: var(--orange-dark);
+}
+
+.btn-secondary.theme-color i::before {
+    color: var(--orange-dark);
+}
+
+.btn-secondary.theme-dark {
+    background-color: var(--none);
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
 }
 
 
@@ -47,7 +86,16 @@
 }
 
 
+button:hover {
+    box-shadow: var(--box-shadow);
+}
 
+.theme-dark button:hover, .btn-secondary.theme-classic:hover {
+    box-shadow: var(--box-glow);
+}
+
+
+/* --------------------BOUTON SWITCH THEME --------------------*/
 
 .color-toggle-wrapper {
     position: relative;
@@ -83,7 +131,7 @@
 }
 
 .color-toggle-wrapper:has(.color-toggle-classic:checked)::after {
-    background: linear-gradient(to right, rgb(35, 185, 255) 0%, rgb(169, 228, 255) 100%);
+    background: linear-gradient(to right,var(--blue-light) 0%, #bcd6f8 100%);
 }
 
 .color-toggle-wrapper:has(.color-toggle-color:checked)::after {

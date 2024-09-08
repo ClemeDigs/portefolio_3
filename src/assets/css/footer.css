@@ -19,10 +19,7 @@ footer.theme-color {
 }
 
 footer.theme-dark {
-    background-color: var(--dark-blue);
-    padding: 1rem;
-    gap: 2rem;
-    font-family: 'michroma';
+    display: none;
 }
 
 .contact {

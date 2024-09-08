@@ -1,0 +1,34 @@
+.dialog-details-projets {
+    background-color: var(--light);
+    box-shadow: var(--box-shadow);
+    height: 75%;
+    align-self: center;
+    max-height: 800px;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dialog-details-projets.theme-dark {
+    background-color: var(--dark);
+    border: 2px solid var(--light);
+    border-radius: 0;
+}
+
+.btn-close {
+    align-self: flex-end;
+}
+
+.btns-dialog {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+    .dialog-details-projets {
+        grid-column: 4 / 10;
+    }
+}

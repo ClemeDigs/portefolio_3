@@ -1,5 +1,4 @@
 body > header {
-    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,8 +16,8 @@ body > header img {
 .logo a {
     display: flex;
     align-items: center;
-    gap: 1rem;
 }
+
 
 .nav-header {
     display: none;
@@ -34,6 +33,12 @@ ul {
 
 a {
     text-decoration: none;
+    border: 1px solid var(--none);
+    transition: all 0.5s;
+}
+
+a:hover {
+    border-bottom: 1px solid var(--text-light);
 }
 
 .icones {
@@ -48,8 +53,10 @@ i {
 
 
 body.theme-classic > header {
+    position: fixed;
     background-color: var(--blue-dark);
     font-family: 'ubuntu';
+    height: 80px;
 }
 
 .logo.theme-classic a,
@@ -70,6 +77,7 @@ i.theme-classic {
 
 
 body.theme-color > header {
+    position: fixed;
     align-items: flex-start;
     padding: 2rem 2rem;
     background-image: url(../img/header-color.png);
@@ -81,6 +89,7 @@ body.theme-color > header {
 }
 
 body.theme-color > header.minimized {
+    position: fixed;
     padding: 0.8rem 2rem;
     background-image: none;
     height: 40px;
@@ -115,6 +124,8 @@ body.theme-dark > header {
     width: 92%;
     z-index: 3;
     font-family: 'michroma';
+    display: flex;
+    flex-direction: column;
 }
 
 .logo.theme-dark a,
@@ -137,6 +148,18 @@ i.theme-dark {
     color: var(--text-light);
 }
 
+.footer-theme-dark {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'michroma';
+}
+
+.footer-theme-dark .contact {
+    display: flex;
+    gap: 0.5rem;
+}
+
 
 @media screen and (min-width: 768px) {
     .nav-header {
@@ -151,22 +174,28 @@ i.theme-dark {
 
 @media screen and (min-width: 768px) {
     body.theme-dark > header {
-        grid-column: 1 / 2;
-        min-height: 100vh;
-        height: 100%;
-        flex-direction: column;
-        gap: 5rem;
-        padding: 2rem 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        grid-column: 11 / 13;
+        display: grid;
+        grid-template-rows: repeat(12,1fr);
+        padding: 1rem 1rem;
         width: fit-content;
-        justify-content: flex-start;
+    }
+
+    .footer-theme-dark {
+        grid-row: 11/12;
     }
 
     .logo.theme-dark {
-        order: 2;
+        grid-row: 2/3;
     }
 
     .icones.theme-dark {
-        order: 1;
+        grid-row: 1/2;
+        justify-self: flex-end;
     }
 
     .logo.theme-dark a {
@@ -175,6 +204,5 @@ i.theme-dark {
 
     .nav-header.theme-dark {
         display: none;
-        order: 2;
     }
 }

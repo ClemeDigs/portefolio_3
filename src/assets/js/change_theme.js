@@ -10,8 +10,8 @@ const imgBanner2 = document.querySelector('.img__banner-2');
 const elementsToTheme = document.querySelectorAll('body, body *');
 const header = document.querySelector('header');
 const mesProjets = document.querySelector('.mes-projets');
-// Sélectionner tous les boutons radio de thème
 const themeRadios = document.querySelectorAll('input[name="btn-switch-theme"]');
+const footerDark = document.querySelector('.footer-theme-dark');
 
 // Fonction pour changer de thème en fonction de la valeur sélectionnée
 function changeTheme(oldThemes, newTheme) {
@@ -35,14 +35,17 @@ themeRadios.forEach(radio => {
             changeTheme('theme-dark theme-classic', 'theme-color');
             imgBanner.setAttribute('src', imgFemmeColor);
             imgBanner2.setAttribute('src', imgFemmeColor2);
+            footerDark.classList.add('hidden');
         } else if (selectedTheme === 'dark') {
             changeTheme('theme-color theme-classic', 'theme-dark');
             imgBanner.setAttribute('src', imgFemmeDark);
             imgBanner2.setAttribute('src', imgFemmeDark2);
+            footerDark.classList.remove('hidden');
         } else {
             changeTheme('theme-color theme-dark', 'theme-classic');
             imgBanner.setAttribute('src', imgFemmeClassic);
             imgBanner2.setAttribute('src', imgFemmeClassic);
+            footerDark.classList.add('hidden');
         }
     });
 });
@@ -57,3 +60,4 @@ imgBanner2.addEventListener('mouseout', () => {
     imgBanner.style.opacity = 1;
     imgBanner2.style.opacity = 0;
 });
+

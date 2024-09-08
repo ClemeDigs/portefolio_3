@@ -64,7 +64,7 @@ main.theme-dark {
 
     main.theme-dark {
         margin-top: 0;
-        grid-column: 4 / 12;
+        grid-column: 1 / 10;
         min-height: 100vh;
         padding: 3rem 0;
     }
