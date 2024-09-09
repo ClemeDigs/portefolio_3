@@ -29,6 +29,7 @@
     background-color: var(--dark-blue);
     border: 1px solid var(--text-light);
     color: var(--text-light);
+    border-radius: 0px;
 }
 
 
@@ -49,22 +50,23 @@
 
 .btn-secondary.theme-color {
     background-color: var(--none);
-    border: 1px solid var(--orange-dark);
-    color: var(--orange-dark);
+    border: 1px solid var(--violet);
+    color: var(--violet);
 }
 
 .btn-secondary.theme-color i::before {
-    color: var(--orange-dark);
+    color: var(--violet);
 }
 
 .btn-secondary.theme-color i::before {
-    color: var(--orange-dark);
+    color: var(--violet);
 }
 
 .btn-secondary.theme-dark {
     background-color: var(--none);
     border: 1px solid var(--text-light);
     color: var(--text-light);
+    border-radius: 0px;
 }
 
 

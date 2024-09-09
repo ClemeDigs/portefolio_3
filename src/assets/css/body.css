@@ -34,13 +34,17 @@ body.theme-color {
     gap: 2rem;
     background-color: var(--text-light);
     color: var(--text-dark);
-    background-image: url(../../img/motifs-couleurs-02.png);
+    background-image: url(../img/motifs-couleurs-02.png);
     background-size: 100%;
     background-attachment: fixed;
 }
 
 main.theme-color {
     margin-top: 12rem;
+    background-color: var(--light);
+    padding: 3rem;
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
 }
 
 
@@ -64,7 +68,7 @@ main.theme-dark {
 
     main.theme-dark {
         margin-top: 0;
-        grid-column: 1 / 10;
+        grid-column: 2 / 10;
         min-height: 100vh;
         padding: 3rem 0;
     }

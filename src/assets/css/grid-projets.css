@@ -1,3 +1,50 @@
+/* --------------------ALL THEMES--------------------- */
+.filters {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 1rem 0 2rem;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 0.5rem;
+}
+
+.checkbox-wrapper::after {
+    position: absolute;
+    right: 0;
+    content: "";
+    width: 16px;
+    height: 16px;
+    background-color: var(--none);
+    display: flex;
+    border: 1px solid var(--dark);
+}
+
+.checkbox-wrapper:has(.checkbox-filter:checked)::after {
+    background-color: pink;
+}
+
+.checkbox-filter {
+    opacity: 0;
+    width: 16px;
+    height: 16px;
+    z-index: 3;
+}
+
+/* --------------------THEME CLASSIC-------------------*/
+
+.theme-classic.checkbox-wrapper::after {
+    border-radius: 6px;
+}
+
+.theme-classic.checkbox-wrapper:has(.checkbox-filter:checked)::after {
+    background-color: var(--blue-light);
+}
+
 .mes-projets.theme-classic > header {
     display: flex;
     justify-content: space-between;
@@ -71,28 +118,15 @@
     opacity: 1;
 }
 
+/* --------------------THEME COLOR-------------------*/
 
-@media screen and (min-width:650px) {
-
-    .projets-grid.theme-classic {
-        grid-template-columns: repeat(2,1fr);
-    }
+.theme-color.checkbox-wrapper::after {
+    border-radius: 10px;
 }
 
-@media screen and (min-width:768px) {
-
-    .projets-grid.theme-classic {
-        grid-template-columns: repeat(3,1fr);
-    }
+.theme-color.checkbox-wrapper:has(.checkbox-filter:checked)::after {
+    background-color: var(--orange-light);
 }
-
-@media screen and (min-width:1024px) {
-
-    .projets-grid.theme-classic {
-        grid-template-columns: repeat(4,1fr);
-    }
-}
-
 
 .mes-projets.theme-color > header {
     display: flex;
@@ -205,30 +239,21 @@
     order: 2;
 }
 
+/* --------------------THEME DARK-------------------*/
 
-
-@media screen and (min-width:650px) {
-
-    .projets-grid.theme-color {
-        grid-template-columns: repeat(2,1fr);
-    }
+.theme-dark.checkbox-wrapper::after {
+    border-radius: 0px;
+    border: 1px solid var(--light);
 }
 
-@media screen and (min-width:768px) {
-
-    .projets-grid.theme-color {
-        grid-template-columns: repeat(3,1fr);
-    }
-}
-
-@media screen and (min-width:1024px) {
-
-    .projets-grid.theme-color {
-        grid-template-columns: repeat(4,1fr);
-    }
+.theme-dark.checkbox-wrapper:has(.checkbox-filter:checked)::after {
+    background-color: var(--medium-blue);
 }
 
 
+.filters.theme-dark {
+    width: 80%;
+}
 
 .mes-projets.theme-dark {
     display: flex;
@@ -315,5 +340,47 @@
 @media screen and (min-width: 768px) {
     .div-projet.theme-dark {
         min-width: 300px;
+    }
+}
+
+@media screen and (min-width:650px) {
+
+    .projets-grid.theme-classic {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .projets-grid.theme-classic {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (min-width:1024px) {
+
+    .projets-grid.theme-classic {
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@media screen and (min-width:650px) {
+
+    .projets-grid.theme-color {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    .projets-grid.theme-color {
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+@media screen and (min-width:1024px) {
+
+    .projets-grid.theme-color {
+        grid-template-columns: repeat(4,1fr);
     }
 }

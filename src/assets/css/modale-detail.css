@@ -27,6 +27,27 @@
     justify-content: space-between;
 }
 
+.dialog-details-projets.theme-classic a, .dialog-details-projets.theme-color a {
+    color: var(--dark);
+    border-bottom: 1px solid var(--none);
+    transition: all 0.3s;
+}
+
+.dialog-details-projets.theme-classic a:hover, .dialog-details-projets.theme-color a:hover {
+    border-bottom: 1px solid var(--dark);
+}
+
+.theme-dark a {
+    color: var(--light);
+    border-bottom: 1px solid var(--none);
+    transition: all 0.3s;
+}
+
+.theme-dark a:hover {
+    border-bottom: 1px solid var(--light);
+}
+
+
 @media screen and (min-width: 1024px) {
     .dialog-details-projets {
         grid-column: 4 / 10;
