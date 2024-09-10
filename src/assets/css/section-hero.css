@@ -98,15 +98,20 @@ h1.theme-color {
 
 .section-hero.theme-dark {
     gap: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.section-hero.theme-dark p {
+    text-align: justify;
 }
 
 h1.theme-dark {
     font-family: 'michroma';
-    text-shadow: var(--text-shadow);
 }
 
 .banner__right.theme-dark {
-    padding: 1rem;
+    padding: 3rem 1rem;
 }
 
 .img__banner.theme-dark, .img__banner-2.theme-dark {
@@ -118,6 +123,11 @@ h1.theme-dark {
 
     .section-hero.theme-dark {
         gap: 2rem;
+    }
+
+    .banner__left.theme-dark {
+        border-bottom: 1px solid var(--light);
+        padding: 5rem 0;
     }
 
     .banner__right.theme-dark {

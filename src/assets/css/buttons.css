@@ -92,10 +92,13 @@ button:hover {
     box-shadow: var(--box-shadow);
 }
 
-.theme-dark button:hover, .btn-secondary.theme-classic:hover {
-    box-shadow: var(--box-glow);
+.theme-dark button:hover {
+    box-shadow: 3px 3px 0px 0px rgba(255, 255, 255, 0.5);
 }
 
+.btn-secondary.theme-classic:hover {
+    box-shadow: var(--box-glow);
+}
 
 /* --------------------BOUTON SWITCH THEME --------------------*/
 

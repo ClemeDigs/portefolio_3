@@ -6,6 +6,8 @@ body > header {
     width: 97vw;
     transition: all 1s;
     z-index: 10;
+    animation: slideInDown;
+    animation-duration: 1s;
 }
 
 body > header img {
@@ -143,6 +145,7 @@ body.theme-dark > header {
     background-color: var(--dark-blue);
     z-index: 3;
     font-family: 'michroma';
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1);
 }
 
 .logo.theme-dark a,

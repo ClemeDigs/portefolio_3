@@ -12,25 +12,28 @@ const header = document.querySelector('header');
 const mesProjets = document.querySelector('.mes-projets');
 const themeRadios = document.querySelectorAll('input[name="btn-switch-theme"]');
 const footerDark = document.querySelector('.footer-theme-dark');
+const body = document.querySelector('body');
 
-// Fonction pour changer de thème en fonction de la valeur sélectionnée
+
 function changeTheme(oldThemes, newTheme) {
     elementsToTheme.forEach(element => {
-        // Supprimer chaque ancienne classe individuellement
         oldThemes.split(' ').forEach(oldTheme => {
             element.classList.remove(oldTheme);
         });
-        // Ajouter la nouvelle classe
         element.classList.add(newTheme);
     });
 }
 
-// Écouter le changement de chaque radio et appliquer le thème sélectionné
-themeRadios.forEach(radio => {
-    radio.addEventListener('change', () => {
-        // Déterminer quel thème appliquer en fonction de la valeur du bouton radio sélectionné
-        const selectedTheme = radio.value;
+function fadeOutBodyAndChangeTheme(selectedTheme) {
+    body.classList.remove('animate__fadeIn');
+    body.classList.add('animate__fadeOut');
+    header.classList.add('animate__fadeOutUpBig');
 
+    body.addEventListener('animationend', () => {
+        body.classList.remove('animate__fadeOut');
+        header.classList.remove('animate__fadeOutUpBig');
+        body.classList.add('animate__fadeIn');
+        
         if (selectedTheme === 'color') {
             changeTheme('theme-dark theme-classic', 'theme-color');
             imgBanner.setAttribute('src', imgFemmeColor);
@@ -47,17 +50,26 @@ themeRadios.forEach(radio => {
             imgBanner2.setAttribute('src', imgFemmeClassic);
             footerDark.classList.add('hidden');
         }
+
+        imgBanner2.addEventListener('mouseover', () => {
+            imgBanner.style.opacity = 0;
+            imgBanner2.style.opacity = 1;
+        });
+
+        imgBanner2.addEventListener('mouseout', () => {
+            imgBanner.style.opacity = 1;
+            imgBanner2.style.opacity = 0;
+        });
+
+    }, { once: true });
+}
+
+
+themeRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        const selectedTheme = radio.value;
+        fadeOutBodyAndChangeTheme(selectedTheme);
     });
 });
 
-
-imgBanner2.addEventListener('mouseover', () => {
-    imgBanner.style.opacity = 0;
-    imgBanner2.style.opacity = 1;
-});
-
-imgBanner2.addEventListener('mouseout', () => {
-    imgBanner.style.opacity = 1;
-    imgBanner2.style.opacity = 0;
-});
 
