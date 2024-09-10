@@ -19,9 +19,9 @@ const projets = [
     new Projet(
         imgUnZeste,
         'Un Zeste de Clémentine',
-        'blablabla',
+        'Projet de site web avec un panier d\'achat',
         'Programmation, Design UI',
-        'blablabla',
+        'Projet dans le cadre du cours d\'interface mobile. Langages utilisés: HTML, Tailwind et Javascript. Implémentation d\'un panier fonctionnel; Des produits générés par une class Javascript; Un formulaire et une infolettre avec validation de courriel.',
         ['programmation', 'design'],
         'Juin 2024',
         'https://tl-02-interface-mobile-v4.vercel.app/',

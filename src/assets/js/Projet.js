@@ -1,3 +1,28 @@
+function applyTheme(element, selectedTheme) {
+    element.classList.remove('theme-classic', 'theme-color', 'theme-dark');
+
+    if (selectedTheme === 'classic') {
+        element.classList.add('theme-classic');
+    } else if (selectedTheme === 'color') {
+        element.classList.add('theme-color');
+    } else if (selectedTheme === 'dark') {
+        element.classList.add('theme-dark');
+    }
+}
+
+const themeRadios = document.querySelectorAll('input[name="btn-switch-theme"]');
+themeRadios.forEach(radio => {
+    radio.addEventListener('change', () => {
+        const selectedTheme = radio.value;
+
+        const elementsToTheme = document.querySelectorAll('.theme-classic, .theme-color, .theme-dark');
+        elementsToTheme.forEach(element => {
+            applyTheme(element, selectedTheme);
+        });
+    });
+});
+
+
 export default class Projet {
     constructor(img, title, desc, task, detail, categorie, date, link, id) {
         this.img = img;
@@ -19,6 +44,7 @@ export default class Projet {
         const infoProjet = document.createElement('div');
         const titleHtml = document.createElement('h3');
         const taskHtml = document.createElement('p');
+        const descHtml = document.createElement('p');
         const dateHtml = document.createElement('p');
         const iconeFleche = document.createElement('i');
         const btnMore = document.createElement('button');
@@ -32,31 +58,6 @@ export default class Projet {
         cardInfoHtml.className = 'div-info theme-classic';
         imgHtml.className = 'img-projet theme-classic';
 
-        const themeRadios = document.querySelectorAll('input[name="btn-switch-theme"]');
-
-        themeRadios.forEach(radio => {
-            radio.addEventListener('change', () => {
-                const selectedTheme = radio.value;
-
-                if (selectedTheme === 'classic') {
-                    cardHtml.className = 'div-projet theme-classic';
-                    cardInfoHtml.className = 'div-info theme-classic';
-                    imgHtml.className = 'img-projet theme-classic';
-                    btnMore.className = 'btn-secondary btn-info theme-classic'
-                } else if (selectedTheme === 'color') {
-                    cardHtml.className = 'div-projet theme-color';
-                    cardInfoHtml.className = 'div-info theme-color';
-                    imgHtml.className = 'img-projet theme-color';
-                    btnMore.className = 'btn-secondary btn-info theme-color'
-                } else if (selectedTheme === 'dark') {
-                    cardHtml.className = 'div-projet theme-dark';
-                    cardInfoHtml.className = 'div-info theme-dark';
-                    imgHtml.className = 'img-projet theme-dark';
-                    btnMore.className = 'btn-secondary btn-info theme-dark'
-                }
-            });
-        });
-        
         infoProjet.className = 'info-projet theme-classic';
         titleHtml.className = 'card-title theme-classic';
         taskHtml.className = 'card-task theme-classic';
@@ -66,6 +67,7 @@ export default class Projet {
 
         titleHtml.textContent = this.title;
         taskHtml.textContent = this.task;
+        descHtml.textContent = this.desc;
         dateHtml.textContent = this.date;
         btnMore.textContent = 'En savoir plus ';
 
@@ -73,13 +75,14 @@ export default class Projet {
             dialogContentHtml.innerHTML = '';
             dialogContentHtml.setAttribute('data-index', index);
             dialogContentHtml.appendChild(this.toDetailHtml());
-        })
+        });
 
         cardHtml.appendChild(cardInfoHtml);
         cardHtml.appendChild(imgHtml);
-        cardInfoHtml.appendChild(infoProjet)
+        cardInfoHtml.appendChild(infoProjet);
         infoProjet.appendChild(titleHtml);
         infoProjet.appendChild(taskHtml);
+        infoProjet.appendChild(descHtml);
         infoProjet.appendChild(dateHtml);
         cardInfoHtml.appendChild(btnMore);
         btnMore.appendChild(iconeFleche);
@@ -87,32 +90,41 @@ export default class Projet {
         return cardHtml;
     }
 
+
     toDetailHtml() {
         const detailHtml = document.createElement('div');
         const detailContentHtml = document.createElement('div');
+        const imgHtml = document.createElement('img');
         const titleHtml = document.createElement('h3');
-        const descHtml = document.createElement('p');
         const detailTextHtml = document.createElement('p');
         const linkHtml = document.createElement('a');
-
+    
         detailHtml.classList.add('card-detail');
         detailContentHtml.classList.add('project-details-container');
-
+    
+        imgHtml.setAttribute('src', this.img);
+        imgHtml.setAttribute('alt', this.title);
         linkHtml.setAttribute('href', this.link);
         linkHtml.setAttribute('target', '_blank');
 
+        imgHtml.className = 'img-modale-projet theme-classic';
+    
+        const selectedTheme = document.querySelector('input[name="btn-switch-theme"]:checked').value;
+        applyTheme(imgHtml, selectedTheme);
+        applyTheme(detailHtml, selectedTheme);
+        applyTheme(detailContentHtml, selectedTheme);
+    
         titleHtml.textContent = this.title;
-        descHtml.textContent = this.desc;
-        detailTextHtml.textContent = this.detailTextHtml;
+        detailTextHtml.textContent = this.detail;
         linkHtml.textContent = 'Visitez';
-
+    
         detailHtml.appendChild(detailContentHtml);
+        detailContentHtml.appendChild(imgHtml);
         detailContentHtml.appendChild(titleHtml);
-        detailContentHtml.appendChild(descHtml);
         detailContentHtml.appendChild(detailTextHtml);
         detailContentHtml.appendChild(linkHtml);
-
+    
         return detailHtml;
     }
-
 }
+

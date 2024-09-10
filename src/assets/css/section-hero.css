@@ -123,6 +123,8 @@ h1.theme-dark {
 
     .section-hero.theme-dark {
         gap: 2rem;
+        justify-self: center;
+        align-self: center;
     }
 
     .banner__left.theme-dark {
@@ -131,14 +133,23 @@ h1.theme-dark {
     }
 
     .banner__right.theme-dark {
+        align-items: center;
         justify-content: flex-end;
         padding: 3rem;
+        display: flex;
     }
 
-    .img__banner.theme-dark, .img__banner-2.theme-dark {
+    .img__banner.theme-dark {
         max-width: min(450px, 100%);
         position: absolute;
-        top: 0;
-        left: 0;
+        right: 0;
+        top: 80px;
+    }
+
+    .img__banner-2.theme-dark {
+        max-width: min(450px, 100%);
+        position: absolute;
+        right: 0;
+        top: 80px;
     }
 }

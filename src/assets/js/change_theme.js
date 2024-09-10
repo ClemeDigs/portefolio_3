@@ -29,6 +29,7 @@ function fadeOutBodyAndChangeTheme(selectedTheme) {
     body.classList.add('animate__fadeOut');
     header.classList.add('animate__fadeOutUpBig');
 
+
     body.addEventListener('animationend', () => {
         body.classList.remove('animate__fadeOut');
         header.classList.remove('animate__fadeOutUpBig');

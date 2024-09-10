@@ -22,7 +22,11 @@ projets.forEach((projet, index) => {
 
 btnNext.addEventListener('click', () => {
     let currentIndex = dialogContentHtml.getAttribute('data-index');
-    currentIndex++;
+    if(currentIndex < projets.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
     dialogContentHtml.setAttribute('data-index', currentIndex);
     dialogContentHtml.innerHTML = '';
     dialogContentHtml.appendChild(projets[currentIndex].toDetailHtml());
@@ -30,7 +34,11 @@ btnNext.addEventListener('click', () => {
 
 btnPrevious.addEventListener('click', () => {
     let currentIndex = dialogContentHtml.getAttribute('data-index');
-    currentIndex--;
+    if(currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = projets.length -1;
+    }
     dialogContentHtml.setAttribute('data-index', currentIndex);
     dialogContentHtml.innerHTML = '';
     dialogContentHtml.appendChild(projets[currentIndex].toDetailHtml());
