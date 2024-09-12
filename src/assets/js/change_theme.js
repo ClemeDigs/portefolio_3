@@ -4,12 +4,10 @@ import imgFemmeDark from '../img/femme-dark-01.png';
 import imgFemmeDark2 from '../img/femme-dark-02.png';
 import imgFemmeClassic from '../img/femme-classique.png';
 
-const btnSwitchTheme = document.querySelector('.theme-switcher');
 const imgBanner = document.querySelector('.img__banner');
 const imgBanner2 = document.querySelector('.img__banner-2');
 const elementsToTheme = document.querySelectorAll('body, body *');
 const header = document.querySelector('header');
-const mesProjets = document.querySelector('.mes-projets');
 const themeRadios = document.querySelectorAll('input[name="btn-switch-theme"]');
 const footerDark = document.querySelector('.footer-theme-dark');
 const body = document.querySelector('body');

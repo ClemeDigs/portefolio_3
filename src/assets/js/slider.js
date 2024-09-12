@@ -1,73 +1,75 @@
-const themeStylesheet = document.getElementById('theme-stylesheet');
-const btnPrevious = document.querySelector('.slider__btn--previous');
-const btnNext = document.querySelector('.slider__btn--next');
-const slides = document.querySelectorAll('.div-projet');
-const slidesContainer = document.querySelector('.projets-grid');
-const body = document.body;
+export default class Slider {
+    constructor(){
+        this.themeStylesheet = document.getElementById('theme-stylesheet');
+        this.btnPrevious = document.querySelector('.slider__btn--previous');
+        this.btnNext = document.querySelector('.slider__btn--next');
+        this.slides = document.querySelectorAll('.div-projet');
+        this.slidesContainer = document.querySelector('.projets-grid');
+        this.body = document.body;
+        this.progressBar = document.querySelector('.progress__bar');
+        this.currentSlideIndex = 0;
+        this.intervalValue;
 
-let progressBar = document.querySelector('.progress__bar');
-let currentSlideIndex = 0;
-let intervalValue;
+        this.hideBtns();
+        this.changeSlide();
 
-function changeProgress(){
-    let progressValue = (currentSlideIndex + 1) / slides.length * 100;
-    progressBar.style.width = progressValue + '%';
-}
+        this.btnPrevious.addEventListener('click', () => {
+            this.previousSlide();
+            this.hideBtns();
+        });
 
-function updateSlidePosition() {
-    const slideWidth = slides[0].offsetWidth;
-    slidesContainer.scrollLeft = slideWidth * currentSlideIndex;
-}
-
-function nextSlide(){
-    currentSlideIndex = Math.min(slides.length - 1, currentSlideIndex + 1);
-    changeProgress();
-    updateSlidePosition();
-}
-
-function previousSlide(){
-    currentSlideIndex = Math.max(0, currentSlideIndex - 1);
-    changeProgress();
-    updateSlidePosition();
-}
-
-function hideBtns(){
-    if (currentSlideIndex === 0){
-        btnPrevious.classList.add('slider__btn--previous--hidden');
-    } else {
-        btnPrevious.classList.remove('slider__btn--previous--hidden');
+        this.btnNext.addEventListener('click', () => {
+            this.nextSlide();
+            this.hideBtns();
+        });
     }
 
-    if (currentSlideIndex === slides.length - 1){
-        btnNext.classList.add('slider__btn--next--hidden');
-    } else {
-        btnNext.classList.remove('slider__btn--next--hidden');
+    changeProgress(){
+        let progressValue = (this.currentSlideIndex + 1) / this.slides.length * 100;
+        this.progressBar.style.width = progressValue + '%';
     }
-}
+    
+    updateSlidePosition() {
+        const slideWidth = this.slides[0].offsetWidth;
+        this.slidesContainer.scrollLeft = slideWidth * this.currentSlideIndex;
+    }
+    
+    nextSlide(){
+        this.currentSlideIndex = Math.min(this.slides.length - 1, this.currentSlideIndex + 1);
+        this.changeProgress();
+        this.updateSlidePosition();
+    }
+    
+    previousSlide(){
+        this.currentSlideIndex = Math.max(0, this.currentSlideIndex - 1);
+        this.changeProgress();
+        this.updateSlidePosition();
+    }
 
-function changeSlide() {
-    intervalValue = setInterval(() => {
-        if (currentSlideIndex === slides.length - 1){
-            currentSlideIndex = 0;
+    hideBtns(){
+        if (this.currentSlideIndex === 0){
+            this.btnPrevious.classList.add('slider__btn--previous--hidden');
         } else {
-            currentSlideIndex++;
+            this.btnPrevious.classList.remove('slider__btn--previous--hidden');
         }
-        updateSlidePosition();
-        changeProgress();
-        hideBtns();
-    }, 3000);
+    
+        if (this.currentSlideIndex === this.slides.length - 1){
+            this.btnNext.classList.add('slider__btn--next--hidden');
+        } else {
+            this.btnNext.classList.remove('slider__btn--next--hidden');
+        }
+    }
+    
+    changeSlide() {
+        this.intervalValue = setInterval(() => {
+            if (this.currentSlideIndex === this.slides.length - 1){
+                this.currentSlideIndex = 0;
+            } else {
+                this.currentSlideIndex++;
+            }
+            this.updateSlidePosition();
+            this.changeProgress();
+            this.hideBtns();
+        }, 3000);
+    }
 }
-
-hideBtns();
-
-btnPrevious.addEventListener('click', () => {
-    previousSlide();
-    hideBtns();
-});
-
-btnNext.addEventListener('click', () => {
-    nextSlide();
-    hideBtns();
-});
-
-changeSlide();
