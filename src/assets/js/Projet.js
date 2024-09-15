@@ -96,17 +96,25 @@ export default class Projet {
         const detailContentHtml = document.createElement('div');
         const imgHtml = document.createElement('img');
         const titleHtml = document.createElement('h3');
-        const detailTextHtml = document.createElement('p');
+        const detailTextHtml = document.createElement('ul');
+        this.detail.forEach(pointDetail => {
+            const li = document.createElement('li');
+            li.textContent = pointDetail;
+            detailTextHtml.appendChild(li);
+        });
+        const iconeFleche = document.createElement('i');
         const linkHtml = document.createElement('a');
-    
-        detailHtml.classList.add('card-detail');
-        detailContentHtml.classList.add('project-details-container');
-    
+
         imgHtml.setAttribute('src', this.img);
         imgHtml.setAttribute('alt', this.title);
         linkHtml.setAttribute('href', this.link);
         linkHtml.setAttribute('target', '_blank');
-
+        
+        detailHtml.classList.add('card-detail');
+        detailContentHtml.classList.add('project-details-container');
+        detailTextHtml.classList.add('list-details');
+        iconeFleche.className = 'fa-solid fa-arrow-right';
+        linkHtml.className = 'link-visitez theme-classic'
         imgHtml.className = 'img-modale-projet theme-classic';
     
         const selectedTheme = document.querySelector('input[name="btn-switch-theme"]:checked').value;
@@ -115,7 +123,6 @@ export default class Projet {
         applyTheme(detailContentHtml, selectedTheme);
     
         titleHtml.textContent = this.title;
-        detailTextHtml.textContent = this.detail;
         linkHtml.textContent = 'Visitez';
     
         detailHtml.appendChild(detailContentHtml);
@@ -123,6 +130,7 @@ export default class Projet {
         detailContentHtml.appendChild(titleHtml);
         detailContentHtml.appendChild(detailTextHtml);
         detailContentHtml.appendChild(linkHtml);
+        linkHtml.appendChild(iconeFleche);
     
         return detailHtml;
     }

@@ -15,11 +15,18 @@
 .project-details-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.project-details-container h3 {
+    margin: 0 auto;
 }
 
 .img-modale-projet {
-    max-width: 60%;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 .btn-close {
@@ -30,6 +37,18 @@
     display: flex;
     width: 100%;
     justify-content: space-between;
+}
+
+.list-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-visitez {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .img-modale-projet.theme-classic {
@@ -74,11 +93,34 @@
 }
 
 
+@media screen and (min-width: 600px){
+    .img-modale-projet {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+}
+
+
 @media screen and (min-width: 768px){
     .dialog-details-projets {
-        max-height: 800px;
+        grid-column: 2 / 4;
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .dialog-details-projets {
         padding: 2rem;
         grid-column: 3 / 11;
-        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .img-modale-projet {
+        max-width: 40%;
+        margin: 0 auto;
+    }
+
+    .project-details-container{
+        padding: 0 4rem;
     }
 }
