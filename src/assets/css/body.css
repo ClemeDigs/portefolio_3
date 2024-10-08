@@ -12,8 +12,16 @@ main {
     max-width: 1440px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 3rem;
     padding: 2rem;
+}
+
+.wrapper {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 /* ----------------THEME CLASSIC--------------- */
@@ -26,7 +34,7 @@ body.theme-classic {
 }
 
 main.theme-classic {
-    margin-top: 10rem;
+    max-width: 100%;
 }
 
 /* ----------------THEME COLOR--------------- */
