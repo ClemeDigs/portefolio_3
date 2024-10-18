@@ -14,7 +14,7 @@ body > header img {
     width: 30px;
 }
 
-.logo a {
+.nom a {
     display: flex;
     align-items: center;
 }
@@ -63,7 +63,7 @@ body.theme-classic > header {
     font-family: 'ubuntu';
 }
 
-.logo.theme-classic a,
+.nom.theme-classic a,
 a.theme-classic,
 i.theme-classic {
     color: var(--light);
@@ -109,7 +109,7 @@ body.theme-color > header.minimized {
     box-shadow: var(--box-shadow);
 }
 
-.logo.theme-color a,
+.nom.theme-color a,
 a.theme-color,
 i.theme-color {
     color: var(--text-light);
@@ -142,16 +142,21 @@ i.theme-color {
 body.theme-dark > header {
     padding: 1rem 0.5rem;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.04);
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.8);
     z-index: 3;
 }
 
-.logo.theme-dark {
+body.theme-dark > header a, body.theme-dark > header i {
+    color: var(--dark-blue);
+}
+
+.nom.theme-dark {
     font-family: 'michroma';
     padding-bottom: 0.5rem;
 }
 
-.logo.theme-dark a,
+.nom.theme-dark a,
 a.theme-dark,
 i.theme-dark {
     color: var(--text-light);
@@ -194,6 +199,11 @@ i.theme-dark {
         grid-template-rows: repeat(12,1fr);
         padding: 1rem;
         width: 10%;
+        background-color: rgba(255, 255, 255, 0.04);
+    }
+
+    body.theme-dark > header a, body.theme-dark > header i {
+        color: var(--text-light);
     }
 
     .nav-header {

@@ -40,7 +40,7 @@
 
 .prog-junior {
     border-radius: 20px;
-    border: 1px solid var(--light);
+    border: 3px dashed var(--light);
     background-color: var(--blue-dark);
     color: var(--light);
     font-size: 24px;

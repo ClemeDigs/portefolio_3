@@ -24,12 +24,13 @@ function changeTheme(oldThemes, newTheme) {
 
 function fadeOutBodyAndChangeTheme(selectedTheme) {
     body.classList.remove('animate__fadeIn');
-    body.classList.add('animate__fadeOut');
+    body.classList.add('animate__zoomOut');
+    body.style.backgroundSize = '500%';
     header.classList.add('animate__fadeOutUpBig');
 
-
     body.addEventListener('animationend', () => {
-        body.classList.remove('animate__fadeOut');
+        body.classList.remove('animate__zoomOut');
+        body.style.backgroundSize = '100%';
         header.classList.remove('animate__fadeOutUpBig');
         body.classList.add('animate__fadeIn');
         

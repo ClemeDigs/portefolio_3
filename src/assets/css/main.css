@@ -8,6 +8,7 @@
 @import 'fonts.css';
 @import 'animation.css';
 @import 'accueil.css';
+@import 'apropos.css';
 
 :root {
     --text-dark: #0D0C0B;

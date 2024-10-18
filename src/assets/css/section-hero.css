@@ -17,6 +17,7 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
+    padding: 1rem 0 0 1rem;
 }
 
 .banner__content {
@@ -28,10 +29,7 @@
 }
 
 .img__banner, .img__banner-2 {
-    display: flex;
-    justify-content: flex-end;
     max-width: min(400px, 100%);
-    height: auto;
 }
 
 .img__banner-2 {
@@ -54,10 +52,17 @@
     }
 
     .img__banner {
-        width: 100%;
-        min-width: 300px;
         transition: all 0.5s;
-        
+    }
+
+    .img__banner, .img__banner-2 {
+        display: flex;
+        justify-content: flex-end;
+        max-width: none;
+        max-height: 100%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
     }
 }
 
@@ -71,8 +76,8 @@ h1.theme-classic {
     font-family: 'ubuntu';
 }
 
-.img__banner-2.theme-classic {
-    border-radius: 50px;
+.img__banner.theme-classic, .img__banner-2.theme-classic {
+    border-radius: 20px;
 }
 
 
@@ -90,7 +95,7 @@ h1.theme-color {
 
 .img__banner.theme-color, .img__banner-2.theme-color {
     border-radius: 50px;
-    width: 80%;
+    max-width: 250px;
 }
 
 
@@ -102,20 +107,17 @@ h1.theme-color {
     box-shadow: none;
 }
 
-.section-hero.theme-dark p {
-    text-align: justify;
+.banner__content.theme-dark {
+    display: flex;
+    flex-direction: column;
 }
 
 h1.theme-dark {
     font-family: 'michroma';
 }
 
-.banner__right.theme-dark {
-    padding: 3rem 1rem;
-}
-
 .img__banner.theme-dark, .img__banner-2.theme-dark {
-    max-width: min(250px, 100%);
+    max-width: 250px;
 }
 
 
@@ -140,7 +142,7 @@ h1.theme-dark {
     }
 
     .img__banner.theme-dark {
-        max-width: min(450px, 100%);
+        max-width: min(350px, 100%);
         position: absolute;
         right: 0;
         top: 80px;
@@ -151,5 +153,9 @@ h1.theme-dark {
         position: absolute;
         right: 0;
         top: 80px;
+    }
+
+    .section-hero.theme-dark p {
+        text-align: justify;
     }
 }
