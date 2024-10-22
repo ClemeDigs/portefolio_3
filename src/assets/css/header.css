@@ -69,6 +69,8 @@ i.theme-classic {
     color: var(--light);
 }
 
+
+
 .nav-mobile.theme-classic {
     background-color: var(--light);
     height: 100vh;

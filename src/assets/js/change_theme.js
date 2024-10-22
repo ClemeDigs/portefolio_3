@@ -1,8 +1,8 @@
 import imgFemmeColor from '../img/femme-color.png';
-import imgFemmeColor2 from '../img/femme-color-02.png';
+import imgFemmeColor2 from '../img/femme-color-2.png';
 import imgFemmeDark from '../img/femme-dark-01.png';
 import imgFemmeDark2 from '../img/femme-dark-02.png';
-import imgFemmeClassic from '../img/femme-classique.png';
+import imgFemmeClassic from '../img/cleme_line-art-02.png';
 
 const imgBanner = document.querySelector('.img__banner');
 const imgBanner2 = document.querySelector('.img__banner-2');
@@ -25,12 +25,10 @@ function changeTheme(oldThemes, newTheme) {
 function fadeOutBodyAndChangeTheme(selectedTheme) {
     body.classList.remove('animate__fadeIn');
     body.classList.add('animate__zoomOut');
-    body.style.backgroundSize = '500%';
     header.classList.add('animate__fadeOutUpBig');
 
     body.addEventListener('animationend', () => {
         body.classList.remove('animate__zoomOut');
-        body.style.backgroundSize = '100%';
         header.classList.remove('animate__fadeOutUpBig');
         body.classList.add('animate__fadeIn');
         

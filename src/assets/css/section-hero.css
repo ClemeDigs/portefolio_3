@@ -4,6 +4,7 @@
     gap: 2rem;
     border-radius: 20px;
     box-shadow: var(--box-shadow);
+    margin: 0 auto;
 }
 
 .banner__left {
@@ -26,10 +27,6 @@
     align-items: center;
     gap: 1rem;
     max-width: 650px;
-}
-
-.img__banner, .img__banner-2 {
-    max-width: min(400px, 100%);
 }
 
 .img__banner-2 {
@@ -58,8 +55,6 @@
     .img__banner, .img__banner-2 {
         display: flex;
         justify-content: flex-end;
-        max-width: none;
-        max-height: 100%;
         position: absolute;
         bottom: 0;
         right: 0;
@@ -78,6 +73,7 @@ h1.theme-classic {
 
 .img__banner.theme-classic, .img__banner-2.theme-classic {
     border-radius: 20px;
+    max-width: 200px;
 }
 
 
@@ -94,7 +90,7 @@ h1.theme-color {
 }
 
 .img__banner.theme-color, .img__banner-2.theme-color {
-    border-radius: 50px;
+    border-radius: 0 0 50px 0;
     max-width: 250px;
 }
 
@@ -123,6 +119,14 @@ h1.theme-dark {
 
 @media screen and (min-width: 768px) {
 
+    .img__banner.theme-classic, .img__banner-2.theme-classic {
+        max-width: 300px;
+    }
+
+    .img__banner.theme-color, .img__banner-2.theme-color {
+        max-width: 350px;
+    }
+
     .section-hero.theme-dark {
         gap: 2rem;
         justify-self: center;
@@ -149,7 +153,7 @@ h1.theme-dark {
     }
 
     .img__banner-2.theme-dark {
-        max-width: min(450px, 100%);
+        max-width: min(350px, 100%);
         position: absolute;
         right: 0;
         top: 80px;

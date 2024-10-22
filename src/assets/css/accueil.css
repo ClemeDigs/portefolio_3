@@ -2,13 +2,14 @@
     padding-top: 68px;
     width: 100vw;
     height: calc(100vh - 70px);
-    background-image: url(../img/fond_accueil.svg);
-    background-size: 150vh;
+    background-image: url(../img/fond-accueil.svg);
+    background-size: 550%;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Ubuntu';
+    color: var(--light);
 }
 
 .accueil h2 {
@@ -40,7 +41,7 @@
 
 .prog-junior {
     border-radius: 20px;
-    border: 3px dashed var(--light);
+    border: 10px dotted var(--light);
     background-color: var(--blue-dark);
     color: var(--light);
     font-size: 24px;
@@ -94,18 +95,18 @@
     position: relative;
     font-weight: 300;
     font-size: 4.5em;
-  }
-  
-  .ml5 .text-wrapper {
+}
+
+.ml5 .text-wrapper {
     position: relative;
     display: inline-block;
     padding-top: 0.1em;
     padding-right: 0.05em;
     padding-bottom: 0.15em;
     line-height: 1em;
-  }
-  
-  .ml5 .line {
+}
+
+.ml5 .line {
     position: absolute;
     left: 0;
     top: 0;
@@ -113,19 +114,19 @@
     margin: auto;
     height: 3px;
     width: 100%;
-    background-color: var(--text-dark);
+    background-color: var(--light);
     transform-origin: 0.5 0;
-  }
-  
-  .ml5 .ampersand {
+}
+
+.ml5 .ampersand {
     margin-right: -0.1em;
     margin-left: -0.1em;
-  }
-  
-  .ml5 .letters {
+}
+
+.ml5 .letters {
     display: inline-block;
     opacity: 0;
-  }
+}
 
 
 .accueil.theme-color {
@@ -139,7 +140,7 @@
 
 @media screen and (min-width: 768px) {
     .accueil.theme-classic {
-        background-size: 220%;
+        background-size: 300%;
     }
     
     .portfolio {
@@ -169,7 +170,7 @@
 
 @media screen and (min-width: 1280px) {
     .accueil.theme-classic {
-        background-size: 110%;
+        background-size: 150%;
     }
     
     .portfolio {

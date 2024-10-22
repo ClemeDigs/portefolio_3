@@ -41,12 +41,8 @@
     color: var(--light);
 }
 
-.btn-secondary.theme-classic i {
-    color: var(--light);
-}
-
-
-.btn-secondary.theme-classic i::before {
+.btn-secondary.theme-classic i,
+btn-secondary.theme-classic i::before {
     color: var(--light);
 }
 
@@ -81,6 +77,10 @@
     color: var(--text-dark);
 }
 
+.menu-mobile.btn-none.theme-classic i {
+    color: var(--text-light);
+}
+
 .btn-none.theme-color {
     color: var(--text-dark);
 }
@@ -88,7 +88,6 @@
 .btn-none.theme-dark {
     color: var(--text-light);
 }
-
 
 button:hover {
     box-shadow: var(--box-shadow);
@@ -138,7 +137,7 @@ button:hover {
 }
 
 .color-toggle-wrapper:has(.color-toggle-classic:checked)::after {
-    background: linear-gradient(to right,var(--blue-light) 0%, #bcd6f8 100%);
+    background: linear-gradient(to right,var(--blue-light) 0%, #5bb6cb 100%);
 }
 
 .color-toggle-wrapper:has(.color-toggle-color:checked)::after {

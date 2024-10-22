@@ -12,17 +12,18 @@
 
 :root {
     --text-dark: #0D0C0B;
-    --blue-dark: #6F7BBF;
-    --blue-light: #79A3D9;
-    --light: #F2EBEB;
-    --pink: #F29F80;
-    --none: rgba(0, 0, 0, 0);
+    --blue-dark: #064A69;
+    --blue-light: #0588A6;
+    --light: #eff4f4;
+    --pink: #D95B72;
+    --purple: #731459;
+    --none: rgba#ffffff(0, 0, 0, 0);
 
     --bg-color: #F2A7A7;
     --orange-dark: #F2762E;
     --orange-light: #fabc64;
     --violet: #574973;
-    --text-light: #F2EBEB;
+    --text-light: #eff4f4;
 
     --dark: #02000D;
     --dark-violet: #0D0126;
