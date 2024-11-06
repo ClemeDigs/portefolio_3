@@ -1,7 +1,7 @@
-import projets from "./projets";
+import { projets } from "./projets.js";
 
-const projetsGrid = document.querySelector('.projets-grid');
+const projetsGrid = document.querySelector(".projets-grid");
 
 projets.forEach((projet, index) => {
-    projetsGrid.appendChild(projet.toGridHtml(index));
-})
+  projetsGrid.appendChild(projet.toGridHtml(index));
+});

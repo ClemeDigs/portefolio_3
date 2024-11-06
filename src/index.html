@@ -4,10 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./assets/js/main.js" defer></script>
-
-
     <script src="https://kit.fontawesome.com/59d9a3259e.js" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="icon" type="image/x-icon" href="./assets/img/CD.svg">
     <title>Portefolio de Clémentine</title>
   </head>
 
@@ -19,8 +18,8 @@
       <nav class="nav-header theme-classic">
         <ul class="theme-classic">
           <li><a href="#mes-projets" class="theme-classic">Projets</a></li>
-          <li><a href="#a-propos" class="theme-classic">À propos</a></li>
-          <li class="contact-nav"><a href="#contact" class="theme-classic">Contact</a></li>
+          <li><a href="#experience" class="theme-classic">À propos</a></li>
+          <li class="contact-nav"><a href="mailto:clementine.digout@yahoo.fr" class="theme-classic">Contact</a></li>
         </ul>
       </nav>
       <div class="icones theme-classic">
@@ -38,17 +37,22 @@
       </div>
       <div class="footer-theme-dark hidden">
         <div class="contact theme-classic" id="contact">
-          <i class="fa-regular fa-envelope"></i>
-          <p>Contact</p>
+          <a href="mailto:clementine.digout@yahoo.fr">
+            <i class="fa-regular fa-envelope"></i>
+            <p>Contact</p>
+          </a>
         </div>
-        <i class="fa-brands fa-linkedin-in"></i>
+        <a href="https://www.linkedin.com/in/clementine-digout-400a632a5/" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
       </div>
       <div class="dialog" id="nav-mobile">
         <div class="nav-mobile theme-classic">
+          <button class="btn-primary btn-close close-mobile-menu theme-classic"><i class="fa-solid fa-xmark"></i></button>
           <nav class="theme-classic">
             <ul class="theme-classic">
               <li><a href="#mes-projets">Projets</a></li>
-              <li><a href="#a-propos">À propos</a></li>
+              <li><a href="#experience">À propos</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
@@ -92,7 +96,7 @@
                       <br>
                       Je suis curieuse, dynamique, j'aime voyager, découvrir de nouvelles choses et apprécie les nouveaux challenges.
                       </p>
-                      <button class="btn-primary theme-classic">En savoir plus <i class="fa-solid fa-arrow-right"></i></button>
+                      <button class="btn-primary theme-classic"><a href="#experience">En savoir plus <i class="fa-solid fa-arrow-right"></i></a></button>
                   </div>
               </div>
               <div class="banner__right theme-classic">
@@ -107,21 +111,14 @@
             <i class="fa-solid fa-sliders filter-icon"></i>
           </header>
           <div class="filters theme-classic hidden">
-              <label class="checkbox-wrapper theme-classic" for="design">Design UX
-                <input type="checkbox" data-filter="UX" class="checkbox-filter theme-classic" name="UX">
+              <label class="checkbox-wrapper theme-classic" for="design">Design
+                <input type="checkbox" data-filter="Design" class="checkbox-filter theme-classic" name="UX">
               </label>
-              <label class="checkbox-wrapper theme-classic" for="design">Design UI
-                <input type="checkbox" data-filter="UI" class="checkbox-filter theme-classic" name="UI">
-              </label>
-              <label class="checkbox-wrapper theme-classic" for="design">Animation
-                <input type="checkbox" data-filter="animation" class="checkbox-filter theme-classic" name="animation">
-              </label>
+
               <label class="checkbox-wrapper theme-classic" for="programmation">Programmation
-                <input type="checkbox" data-filter="programmation" class="checkbox-filter theme-classic" name="programmation">
+                <input type="checkbox" data-filter="Programmation" class="checkbox-filter theme-classic" name="programmation">
               </label>
-              <label class="checkbox-wrapper theme-classic" for="design">Jeux
-                <input type="checkbox" data-filter="jeux" class="checkbox-filter theme-classic" name="jeux">
-              </label>
+              
             </div>
           <div class="projets theme-classic">
             <button class="slider__btn--previous btn-primary theme-classic">&#10094;</button>
@@ -140,76 +137,77 @@
               <h3 class="theme-classic">Mes compétences</h3>
               <div class="theme-classic logo-container">
                 <div class="logo">
-                  <img src="./assets/img/adobe-illustrator-cc-3.svg" alt="">
-                  <p>Illustrator</p>
-                </div>
-                <div class="logo">
-                  <img src="./assets/img/adobe-photoshop-2.svg" alt="">
-                  <p>Photoshop</p>
-                </div>
-                <div class="logo">
-                  <img src="./assets/img/after-effects-1.svg" alt="">
-                  <p>After Effetcs</p>
-                </div>
-                <div class="logo">
-                  <img src="./assets/img/angular-icon-1.svg" alt="">
-                  <p>Angular</p>
-                </div>
-                <div class="logo">
-                  <img src="./assets/img/css-3.svg" alt="">
-                  <p>CSS3</p>
-                </div>
-                <div class="logo big">
-                  <img src="./assets/img/figma-icon.svg" alt="">
-                  <p>Figma</p>
-                </div>
-                <div class="logo">
-                  <img src="./assets/img/html-1.svg" alt="">
+                  <img src="./assets/img/html-1.svg" alt="logo html">
                   <p>HTML5</p>
                 </div>
                 <div class="logo">
-                  <img src="./assets/img/javascript-1.svg" alt="">
+                  <img src="./assets/img/css-3.svg" alt="logo css">
+                  <p>CSS3</p>
+                </div>
+                <div class="logo">
+                  <img src="./assets/img/javascript-1.svg" alt="logo javascript">
                   <p>JavaScript</p>
                 </div>
+                <div class="logo big">
+                  <img src="./assets/img/figma-icon.svg" alt="logo figma">
+                  <p>Figma</p>
+                </div>
+
                 <div class="logo small">
-                  <img src="./assets/img/PHP-logo.svg" alt="">
+                  <img src="./assets/img/PHP-logo.svg" alt="logo php">
                   <p>PHP</p>
                 </div>
                 <div class="logo small">
-                  <img src="./assets/img/React-icon.svg" alt="">
+                  <img src="./assets/img/React-icon.svg" alt="logo react">
                   <p>React</p>
                 </div>
                 <div class="logo">
-                  <img src="./assets/img/wordpress-icon-1.svg" alt="">
+                  <img src="./assets/img/wordpress-icon-1.svg" alt="logo wordpress">
                   <p>Wordpress</p>
+                </div>
+                <div class="logo">
+                  <img src="./assets/img/angular-icon-1.svg" alt="logo angular">
+                  <p>Angular</p>
+                </div>
+                <div class="logo">
+                  <img src="./assets/img/adobe-illustrator-cc-3.svg" alt="logo adobe illustrator">
+                  <p>Illustrator</p>
+                </div>
+                <div class="logo">
+                  <img src="./assets/img/adobe-photoshop-2.svg" alt="logo adobe photoshop">
+                  <p>Photoshop</p>
+                </div>
+                <div class="logo">
+                  <img src="./assets/img/after-effects-1.svg" alt="logo adobe after-effects">
+                  <p>After Effetcs</p>
                 </div>
               </div>
             </div>
 
-            <div class="theme-classic experience">
+            <div id="experience" class="theme-classic experience">
               <h3 class="theme-classic">Mon experience</h3>
               <div class="theme-classic experience-content">
-                <p>Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie. Chocolate bar bear claw jujubes biscuit halvah sesame snaps gingerbread lollipop. Oat cake candy canes jelly liquorice oat cake brownie. </p>
-                <p>Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie. Chocolate bar bear claw jujubes biscuit halvah sesame snaps gingerbread lollipop. Oat cake candy canes jelly liquorice oat cake brownie. Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie.</p>
-                <p>Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie. Chocolate bar bear claw jujubes biscuit halvah sesame snaps gingerbread lollipop.</p>
-                <p>Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie. Chocolate bar bear claw jujubes biscuit halvah sesame snaps gingerbread lollipop. Oat cake candy canes jelly liquorice oat cake brownie. Sugar plum pie candy canes cake shortbread lemon drops jelly sweet apple pie.</p>
+                <p>   Grâce à mes 12 ans de métier en pâtisserie, j’ai acquis des compétences qui me servent déjà beaucoup dans cette nouvelle voie. Chaque jour, ma rigueur, ma créativité, mon souci du détail et ma gestion du stress m’aident à me surpasser. Dans mes rôles de cheffe et d’enseignante, j’ai eu la chance de superviser des équipes et de transmettre mes connaissances, des atouts que je pense utiles au sein d’une compagnie de développement et qui témoignent de ma capacité à travailler en équipe.
+                  Grâce à la pâtisserie, j’ai développé un œil pour l’esthétique et le détail, ce qui m’a initialement conduite vers le design Web. Quant à la programmation, comme une recette, elle exige la même précision et organisation pour arriver à un résultat réussi. Au fil de ma formation, la programmation est devenue une passion qui s’est imposée d’elle-même. Aujourd’hui, je sais que ce domaine est fait pour moi : j’aime analyser, résoudre des problèmes et comprendre le fonctionnement de chaque projet.</p>
+                <p>   Ma formation, qui touche à sa fin, m’a permis d’acquérir de bonnes bases en développement et en design Web. Je travaille avec des langages comme HTML et CSS, et j’apprécie particulièrement JavaScript. J'ai également appris à coder avec des frameworks comme React et Angular. Nous avons eu l’opportunité de créer un site web de A à Z pour un organisme à but non lucratif avec WordPress, en utilisant PHP. Découvrir le monde du numérique a été une véritable révélation, et j’ai pris plaisir à explorer chaque facette de ce domaine : le design, la programmation, l’animation, la gestion de projet et le marketing. C’est un secteur en constante évolution; il y a toujours quelque chose de nouveau à apprendre, ce qui rend chaque projet unique.</p>
               </div>
-              <button class="download-cv btn-primary theme-classic">Télécharger mon CV <i class="fa-solid fa-arrow-down"></i></button>
+              <a href="./assets/docs/cv_clementine-digout.pdf" class="download-cv theme-classic" download="cv_clementine-digout">Télécharger mon CV <i class="fa-solid fa-arrow-down"></i></a>
             </div>
-
           </div>
-
         </section>
   
         <div id="dialog-projets" class="dialog">
-          <div class="dialog-details-projets theme-classic theme-clasic">
-            <button class="btn-close btn-primary"><i class="fa-solid fa-xmark"></i></button>
-            <div class="dialog-content"></div>
-            <div class="btns-dialog">        
-              <button class="btn-previous btn-primary theme-clasic"><i class="fa-solid fa-chevron-left"></i> Précédent</button>
-              <button class="btn-next btn-primary theme-clasic">Suivant <i class="fa-solid fa-chevron-right"></i></button>
+          <div class="border-dialog theme-classic">
+            <div class="dialog-details-projets theme-classic">
+              <button class="btn-close btn-primary theme-classic"><i class="fa-solid fa-xmark"></i></button>
+              <div class="dialog-content"></div>
+              <div class="btns-dialog">
+                <button class="btn-previous btn-primary theme-classic"><i class="fa-solid fa-chevron-left"></i> Précédent</button>
+                <button class="btn-next btn-primary theme-classic">Suivant <i class="fa-solid fa-chevron-right"></i></button>
+              </div>
             </div>
           </div>
+          
         </div>
       </div>
     </main>
@@ -217,10 +215,15 @@
 
     <footer class="theme-classic">
       <div class="contact theme-classic" id="contact">
-        <i class="fa-regular fa-envelope"></i>
-        <p>Contact</p>
+        <a href="mailto:clementine.digout@yahoo.fr">
+          <i class="fa-regular fa-envelope"></i>
+          <p>Contact</p>
+        </a>
       </div>
-      <i class="fa-brands fa-linkedin-in"></i>
+      <a href="https://www.linkedin.com/in/clementine-digout-400a632a5/" target="_blank">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+
     </footer>
 
     <script src="https://unpkg.com/gsap/dist/gsap.min.js"></script>

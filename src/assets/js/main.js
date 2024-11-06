@@ -8,9 +8,6 @@ import "./filters";
 import "./change_theme";
 import "./animations.js";
 
-
-
 new WOW().init();
 
 const slider = new Slider();
-
