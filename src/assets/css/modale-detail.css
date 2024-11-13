@@ -68,7 +68,12 @@
 
 .link-visitez {
   display: flex;
-  flex-direction: column;
+}
+
+.links-container {
+  display: flex;
+  gap: 2rem;
+  font-weight: 700;
 }
 
 /* --------------------THEME CLASSIC-------------------*/
@@ -91,14 +96,14 @@
 .dialog-details-projets.theme-classic a,
 .dialog-details-projets.theme-color a {
   color: var(--dark);
-  border-bottom: 1px solid var(--none);
+  border-color: transparent;
   transition: all 0.3s;
   width: fit-content;
 }
 
 .dialog-details-projets.theme-classic a:hover,
 .dialog-details-projets.theme-color a:hover {
-  border-bottom: 1px solid var(--dark);
+  border-color: var(--dark);
 }
 
 .title-stack.theme-classic .list-details li {
@@ -149,16 +154,6 @@
 
 /* --------------------THEME DARK-------------------*/
 
-.theme-dark a {
-  color: var(--light);
-  border-bottom: 1px solid var(--none);
-  transition: all 0.3s;
-}
-
-.theme-dark a:hover {
-  border-bottom: 1px solid var(--light);
-}
-
 .dialog-details-projets.theme-dark {
   background-color: var(--dark);
   border: 2px solid var(--light);
@@ -198,6 +193,11 @@
   .border-dialog {
     padding: 2rem;
     grid-column: 3 / 11;
+  }
+
+  .border-dialog.theme-classic,
+  .border-dialog.theme-color {
+    background-size: 150%;
   }
 
   .top-dialog {

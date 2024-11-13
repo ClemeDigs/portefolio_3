@@ -27,7 +27,7 @@
 .btn-primary.theme-classic a:hover,
 .btn-primary.theme-color a:hover {
   text-decoration: none;
-  border: none;
+  border-color: transparent;
 }
 
 .btn-primary.theme-classic {

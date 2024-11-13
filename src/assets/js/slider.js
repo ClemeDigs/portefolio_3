@@ -9,7 +9,6 @@ export default class Slider {
     this.currentSlideIndex = 0;
     this.intervalValue;
 
-    // Mise à jour des diapositives au chargement initial
     this.updateSlides();
     this.hideBtns();
     this.changeSlide();
@@ -25,13 +24,15 @@ export default class Slider {
     });
   }
 
-  // Mettre à jour la liste des diapositives visibles et la barre de progression
   updateSlides() {
-    this.slides = this.slidesContainer.querySelectorAll(".div-projet"); // Réactualise les diapositives visibles
+    this.slides = Array.from(
+      this.slidesContainer.querySelectorAll(".div-projet")
+    ).filter((slide) => slide.style.display !== "none");
+
     this.updateProgress();
+    this.updateSlidePosition();
   }
 
-  // Mettre à jour la barre de progression en fonction du nombre de diapositives visibles
   updateProgress() {
     let progressValue =
       ((this.currentSlideIndex + 1) / this.slides.length) * 100;

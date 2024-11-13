@@ -136,7 +136,7 @@ h1.theme-dark {
   }
 
   .banner__left.theme-dark {
-    border-bottom: 1px solid var(--light);
+    border-color: var(--light);
     padding: 5rem 0;
   }
 
